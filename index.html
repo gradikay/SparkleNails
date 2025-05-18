@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance Nail Salon | Premium Nail Care Services</title>
+    <meta name="description" content="Experience premium nail care services at Elegance Nail Salon. Book your appointment today for manicures, pedicures, and nail art from our expert technicians.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#home">
+                    <svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+                        <path d="M35.936 36.768C31.904 36.768 28.448 35.712 25.568 33.6C22.688 31.456 20.608 28.48 19.328 24.672L25.664 22.08C26.56 24.736 27.936 26.752 29.792 28.128C31.648 29.504 33.76 30.192 36.128 30.192C38.144 30.192 39.776 29.696 41.024 28.704C42.272 27.712 42.896 26.368 42.896 24.672C42.896 23.04 42.336 21.728 41.216 20.736C40.128 19.744 38.464 18.912 36.224 18.24L31.616 16.896C28.192 15.904 25.568 14.336 23.744 12.192C21.952 10.048 21.056 7.488 21.056 4.512C21.056 1.472 22.208 -1.088 24.512 -3.168C26.848 -5.28 29.792 -6.336 33.344 -6.336C36.768 -6.336 39.808 -5.328 42.464 -3.312C45.152 -1.296 47.04 1.344 48.128 4.608L42.032 6.96C41.456 4.912 40.448 3.312 39.008 2.16C37.568 0.976 35.84 0.384 33.824 0.384C32 0.384 30.528 0.864 29.408 1.824C28.32 2.752 27.776 3.904 27.776 5.28C27.776 8.224 29.728 10.144 33.632 11.04L38.336 12.384C42.208 13.472 45.088 15.136 46.976 17.376C48.864 19.584 49.808 22.304 49.808 25.536C49.808 28.64 48.608 31.28 46.208 33.456C43.808 35.664 40.272 36.768 35.6 36.768H35.936Z" fill="#D4AF37"/>
+                        <text x="60" y="25" font-family="Playfair Display" font-size="24" fill="#333333">ELEGANCE</text>
+                        <text x="60" y="45" font-family="Montserrat" font-size="12" fill="#333333">NAIL SALON</text>
+                    </svg>
+                </a>
+            </div>
+            <nav id="navbar">
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#booking" class="nav-link">Book Now</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Elevate Your Nail Experience</h1>
+            <p>Premium nail care services in a serene, luxurious environment</p>
+            <a href="#booking" class="btn btn-primary">Book an Appointment</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Discover our premium nail treatments and packages</p>
+            </div>
+
+            <div class="service-categories">
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-category="manicures">Manicures</button>
+                    <button class="tab-btn" data-category="pedicures">Pedicures</button>
+                    <button class="tab-btn" data-category="nail-art">Nail Art</button>
+                    <button class="tab-btn" data-category="packages">Packages</button>
+                </div>
+
+                <div class="service-list active" id="manicures">
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Classic Manicure</h3>
+                            <p>Our signature manicure includes nail shaping, cuticle care, hand massage, and polish application.</p>
+                        </div>
+                        <div class="service-price">$35</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Gel Manicure</h3>
+                            <p>Long-lasting gel polish application with our classic manicure treatment for a flawless finish that lasts up to two weeks.</p>
+                        </div>
+                        <div class="service-price">$45</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Luxury Manicure</h3>
+                            <p>Enhanced manicure experience including exfoliation, hydrating mask, extended massage, hot towel treatment, and premium polish.</p>
+                        </div>
+                        <div class="service-price">$60</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Nail Extensions</h3>
+                            <p>Full set of acrylic or gel extensions, expertly applied and shaped to your preference.</p>
+                        </div>
+                        <div class="service-price">$70+</div>
+                    </div>
+                </div>
+
+                <div class="service-list" id="pedicures">
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Classic Pedicure</h3>
+                            <p>Rejuvenating foot treatment including soak, scrub, nail care, foot massage, and polish application.</p>
+                        </div>
+                        <div class="service-price">$45</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Gel Pedicure</h3>
+                            <p>Our classic pedicure with long-lasting gel polish for beautiful, chip-resistant color.</p>
+                        </div>
+                        <div class="service-price">$55</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Luxury Spa Pedicure</h3>
+                            <p>Premium pedicure experience with aromatic soak, deluxe exfoliation, callus treatment, paraffin dip, extended massage, and premium polish.</p>
+                        </div>
+                        <div class="service-price">$75</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Sports Pedicure</h3>
+                            <p>Designed for active lifestyles, focusing on foot health and relief with specialized massage techniques.</p>
+                        </div>
+                        <div class="service-price">$50</div>
+                    </div>
+                </div>
+
+                <div class="service-list" id="nail-art">
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Simple Design</h3>
+                            <p>Single-color accents, dots, lines, or simple patterns added to your manicure or pedicure.</p>
+                        </div>
+                        <div class="service-price">$10+</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>French Tips</h3>
+                            <p>Classic white tips with natural pink base for an elegant, timeless look.</p>
+                        </div>
+                        <div class="service-price">$15</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Custom Nail Art</h3>
+                            <p>Hand-painted designs, intricate patterns, or themed artwork created by our expert nail artists.</p>
+                        </div>
+                        <div class="service-price">$25+</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Premium Embellishments</h3>
+                            <p>Crystals, charms, chrome finish, foil designs, or 3D elements for statement nails.</p>
+                        </div>
+                        <div class="service-price">$30+</div>
+                    </div>
+                </div>
+
+                <div class="service-list" id="packages">
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Classic Combo</h3>
+                            <p>Classic manicure and pedicure for a complete nail care experience.</p>
+                        </div>
+                        <div class="service-price">$75</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Gel Combo</h3>
+                            <p>Gel manicure and pedicure package for long-lasting color and shine.</p>
+                        </div>
+                        <div class="service-price">$95</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Bridal Package</h3>
+                            <p>Trial and wedding day manicure and pedicure with premium nail art and glass of champagne.</p>
+                        </div>
+                        <div class="service-price">$150</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-info">
+                            <h3>Elegance Luxury Experience</h3>
+                            <p>Our signature package including luxury manicure, luxury pedicure, premium nail art, paraffin treatments, and complimentary refreshments.</p>
+                        </div>
+                        <div class="service-price">$130</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Gallery</h2>
+                <p>Browse our portfolio of stunning nail designs and salon atmosphere</p>
+            </div>
+
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="nail-art">Nail Art</button>
+                <button class="filter-btn" data-filter="salon">Salon</button>
+                <button class="filter-btn" data-filter="services">Services</button>
+            </div>
+
+            <div class="gallery-container">
+                <!-- Nail Art -->
+                <div class="gallery-item nail-art">
+                    <img src="https://pixabay.com/get/g953fb0641f6fa6a94a83ce00f54eb862c07d3979230e64c88fa6c498d4cd250cc6b378d0675e04110de722bab46a42cca3c96e275edc17bf39dc71d9514d3ff6_1280.jpg" alt="Elegant pink floral nail art design">
+                    <div class="gallery-overlay">
+                        <h3>Floral Elegance</h3>
+                        <p>Delicate pink design with floral accents</p>
+                    </div>
+                </div>
+                <div class="gallery-item nail-art">
+                    <img src="https://pixabay.com/get/gcc35fd55ab90857c466f7dcfdc8269031d49297cff6d489df7378191fb639c503de27114cc047dd9a28d8aa371ca1d9b11f550e724dde7ea36e490a2e1c377d0_1280.jpg" alt="Minimalist geometric nail art with gold accents">
+                    <div class="gallery-overlay">
+                        <h3>Geometric Gold</h3>
+                        <p>Modern design with metallic accents</p>
+                    </div>
+                </div>
+                <div class="gallery-item nail-art">
+                    <img src="https://pixabay.com/get/g6194b66cb616a389e98665b73ccf005bfe56078e700aa9918e8e87de7a714bd27355598d9c56934645599117d7e42deb39848a39a9e69c4c3197b590cd188728_1280.jpg" alt="French manicure with unique twist">
+                    <div class="gallery-overlay">
+                        <h3>Modern French</h3>
+                        <p>Classic look with contemporary styling</p>
+                    </div>
+                </div>
+                <div class="gallery-item nail-art">
+                    <img src="https://pixabay.com/get/g481397305b257da84218d0efc3a71f7f0033a85f80df0a3c4f8bc180e2b2372bf988a6fcfe3e6495e3279b55971403a68e2f96b4fbc30184a660b4d166f0e054_1280.jpg" alt="Sparkly jewel-toned nail design">
+                    <div class="gallery-overlay">
+                        <h3>Jewel Tones</h3>
+                        <p>Rich colors with glitter accents</p>
+                    </div>
+                </div>
+                <div class="gallery-item nail-art">
+                    <img src="https://pixabay.com/get/g3c1dce4b2e8da689e9139305acaa3530c14d4d322298833f36ddc6dabd1ec4ae142d2e8d88d6710c226e7ec6b25cf4e1d8736265307f09746c32f73c78fb53dd_1280.jpg" alt="Pastel abstract nail art design">
+                    <div class="gallery-overlay">
+                        <h3>Pastel Dreams</h3>
+                        <p>Soft colors with abstract patterns</p>
+                    </div>
+                </div>
+                <div class="gallery-item nail-art">
+                    <img src="https://pixabay.com/get/gac197a3d87e53a347a5a02cf1608760d84994a06e1bee6aaabf19d1dc96b4d7d2a6d4b6d61adb2552b873684940d8f2216193e151b4688307935d2866cf5a0b3_1280.jpg" alt="Elegant wedding nail design">
+                    <div class="gallery-overlay">
+                        <h3>Bridal Bliss</h3>
+                        <p>Perfect for special occasions</p>
+                    </div>
+                </div>
+
+                <!-- Salon -->
+                <div class="gallery-item salon">
+                    <img src="https://pixabay.com/get/g104134c8e9031d40843437047fc002840f4d9cd74e5658e50696b7754cab9934047c3c743703c33f654c419b4fb2dd242c021f17d999acc45f5cfda1338cb40d_1280.jpg" alt="Elegant nail salon interior">
+                    <div class="gallery-overlay">
+                        <h3>Our Salon</h3>
+                        <p>Modern, comfortable interior design</p>
+                    </div>
+                </div>
+                <div class="gallery-item salon">
+                    <img src="https://pixabay.com/get/ge3a4825dc64604d9c1e70cbedbc147a7606c82fe75df119782a786f9a4e2217d9903c0b87f738302eca74dd5ee2a283598ffa2314f71efb00625268b43d12f1d_1280.jpg" alt="Reception area of nail salon">
+                    <div class="gallery-overlay">
+                        <h3>Welcome Area</h3>
+                        <p>Our inviting reception space</p>
+                    </div>
+                </div>
+                <div class="gallery-item salon">
+                    <img src="https://pixabay.com/get/g9342354a6fcb0ae51ee560449f8b830f7cfe799fb66f1a7e4cc9684fabca7b53d1a4247d9223096bdb859c883940f7a7ddb82844ffb911f3780204c2f1039a60_1280.jpg" alt="Luxurious pedicure stations">
+                    <div class="gallery-overlay">
+                        <h3>Pedicure Lounge</h3>
+                        <p>Comfortable pedicure stations</p>
+                    </div>
+                </div>
+                <div class="gallery-item salon">
+                    <img src="https://pixabay.com/get/ge4e06a1c76d4b9a2a640bf5d634b16e500e635b80e9fc4caa923d684fce3d03997e9b8960747d323366210434b358eec316596f968d6b9e4cf4fb44381a0d9e2_1280.jpg" alt="Nail polish wall display">
+                    <div class="gallery-overlay">
+                        <h3>Color Selection</h3>
+                        <p>Our extensive polish collection</p>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="gallery-item services">
+                    <img src="https://pixabay.com/get/gb368abe45e5f934682f4315b6be30a38f58b4500cd87a4c0bd1ea353c05fa2690b1c7020c5af4fc15102c0e5347afe471cb0faf1b6c6e892dcde29d5672dca1e_1280.jpg" alt="Manicure service in progress">
+                    <div class="gallery-overlay">
+                        <h3>Manicure Service</h3>
+                        <p>Professional nail care technique</p>
+                    </div>
+                </div>
+                <div class="gallery-item services">
+                    <img src="https://pixabay.com/get/g35f0363785350223502243f5151002ffce94ce6642bfb3a1e02f5d1de1a6372f4b1c9e612c91533220fb84580c9a9e6b5c765e750f1a9a542a3883f8601f1d19_1280.jpg" alt="Pedicure treatment being performed">
+                    <div class="gallery-overlay">
+                        <h3>Luxury Pedicure</h3>
+                        <p>Relaxing foot treatment</p>
+                    </div>
+                </div>
+                <div class="gallery-item services">
+                    <img src="https://pixabay.com/get/g944ac84ab9c8024e159efeaa816b20c11411f0b580104be9f8b1595bb4de475425d892041bb24cdb85826786452ac8646bc4f0251c9794f94e917b9567dde2ff_1280.jpg" alt="Nail art application">
+                    <div class="gallery-overlay">
+                        <h3>Artistic Detail</h3>
+                        <p>Precision nail art application</p>
+                    </div>
+                </div>
+                <div class="gallery-item services">
+                    <img src="https://pixabay.com/get/g55f1e04b4235a855d3f9f6e010df895d976e4b1dffe75412dad7718ffb13282cdd6994397adbbab0bebc1ab97d1cf7407039ab1c576ac3e7cd30cf58d19b3f9e_1280.jpg" alt="Hand massage during manicure">
+                    <div class="gallery-overlay">
+                        <h3>Hand Therapy</h3>
+                        <p>Relaxing massage treatment</p>
+                    </div>
+                </div>
+
+                <!-- Spa Atmosphere -->
+                <div class="gallery-item salon">
+                    <img src="https://pixabay.com/get/g80e8acc96551627bf0ee579665a4ef86db5ef58ea60c1929890f5d97be3190a5d3bd0eee9079a23d6a858e7ff560d847c6e9e7b064af6152c577cb914b63e821_1280.jpg" alt="Spa atmosphere with candles and towels">
+                    <div class="gallery-overlay">
+                        <h3>Tranquil Setting</h3>
+                        <p>Serene spa environment</p>
+                    </div>
+                </div>
+                <div class="gallery-item salon">
+                    <img src="https://pixabay.com/get/gd2432944c6fd44741796af3d2fc6d18e7603941fc5a3c9962faccce880d2d500a864789bfb8ce6c5fd52a422da6c487da8630dbae7d789688cd514ee0870517b_1280.jpg" alt="Relaxation area with flowers">
+                    <div class="gallery-overlay">
+                        <h3>Relaxation Zone</h3>
+                        <p>Unwind in our peaceful space</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lightbox -->
+            <div class="lightbox" id="lightbox">
+                <span class="close-lightbox">&times;</span>
+                <img class="lightbox-img" id="lightbox-img">
+                <div class="lightbox-caption"></div>
+                <div class="lightbox-controls">
+                    <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-header">
+                        <h2>About Elegance</h2>
+                        <p>Dedicated to nail artistry and self-care</p>
+                    </div>
+                    <p>Welcome to Elegance Nail Salon, where we believe that beautiful nails are an expression of self-care and personal style. Founded with a passion for nail artistry and an unwavering commitment to hygiene, our salon offers a tranquil escape from the everyday.</p>
+                    <p>Our team of skilled technicians brings years of experience and a keen eye for detail to every service. We use only premium products that are kind to your nails and the environment, ensuring lasting results without compromise.</p>
+                    <p>At Elegance, we're more than just a nail salon—we're a destination for relaxation and rejuvenation. Every visit is an opportunity to slow down, indulge, and leave feeling refreshed and confident.</p>
+                    
+                    <div class="business-info">
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="info-details">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
+                                <p>Saturday: 9:00 AM - 6:00 PM</p>
+                                <p>Sunday: 11:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info-details">
+                                <h4>Location</h4>
+                                <p>123 Beauty Lane</p>
+                                <p>Elegance Plaza, Suite 101</p>
+                                <p>New York, NY 10001</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="info-details">
+                                <h4>Contact</h4>
+                                <p>Phone: (212) 555-7890</p>
+                                <p>Email: info@elegancenails.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="https://pixabay.com/get/g104134c8e9031d40843437047fc002840f4d9cd74e5658e50696b7754cab9934047c3c743703c33f654c419b4fb2dd242c021f17d999acc45f5cfda1338cb40d_1280.jpg" alt="Elegance Nail Salon interior">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Experiences</h2>
+                <p>What our clients say about their Elegance experience</p>
+            </div>
+
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"The attention to detail at Elegance is unmatched. My nails have never looked better, and the serene atmosphere makes every visit a treat for the senses. I won't go anywhere else!"</p>
+                        <div class="client-info">
+                            <h4>Sophia R.</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"I came in for a simple manicure and was blown away by the service. The technicians truly listen to what you want and deliver beyond expectations. My new go-to salon!"</p>
+                        <div class="client-info">
+                            <h4>Michael T.</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"Elegance takes cleanliness and sanitation seriously, which is so important these days. I feel safe, pampered, and always leave with gorgeous nails that last for weeks!"</p>
+                        <div class="client-info">
+                            <h4>Isabella K.</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <button class="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking section-padding">
+        <div class="container">
+            <div class="booking-content">
+                <div class="section-header">
+                    <h2>Book Your Appointment</h2>
+                    <p>Schedule your nail transformation with us</p>
+                </div>
+
+                <form id="booking-form" class="booking-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message"></span>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date" required>
+                            <span class="error-message"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="time">Preferred Time</label>
+                            <input type="time" id="time" name="time" required>
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Requested</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <optgroup label="Manicures">
+                                <option value="classic-manicure">Classic Manicure</option>
+                                <option value="gel-manicure">Gel Manicure</option>
+                                <option value="luxury-manicure">Luxury Manicure</option>
+                                <option value="nail-extensions">Nail Extensions</option>
+                            </optgroup>
+                            <optgroup label="Pedicures">
+                                <option value="classic-pedicure">Classic Pedicure</option>
+                                <option value="gel-pedicure">Gel Pedicure</option>
+                                <option value="luxury-pedicure">Luxury Spa Pedicure</option>
+                                <option value="sports-pedicure">Sports Pedicure</option>
+                            </optgroup>
+                            <optgroup label="Packages">
+                                <option value="classic-combo">Classic Combo</option>
+                                <option value="gel-combo">Gel Combo</option>
+                                <option value="bridal-package">Bridal Package</option>
+                                <option value="luxury-experience">Elegance Luxury Experience</option>
+                            </optgroup>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Special Requests or Notes</label>
+                        <textarea id="notes" name="notes" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">Request Appointment</button>
+                    </div>
+
+                    <div id="form-response" class="form-response"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home">
+                        <svg width="150" height="40" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+                            <path d="M35.936 36.768C31.904 36.768 28.448 35.712 25.568 33.6C22.688 31.456 20.608 28.48 19.328 24.672L25.664 22.08C26.56 24.736 27.936 26.752 29.792 28.128C31.648 29.504 33.76 30.192 36.128 30.192C38.144 30.192 39.776 29.696 41.024 28.704C42.272 27.712 42.896 26.368 42.896 24.672C42.896 23.04 42.336 21.728 41.216 20.736C40.128 19.744 38.464 18.912 36.224 18.24L31.616 16.896C28.192 15.904 25.568 14.336 23.744 12.192C21.952 10.048 21.056 7.488 21.056 4.512C21.056 1.472 22.208 -1.088 24.512 -3.168C26.848 -5.28 29.792 -6.336 33.344 -6.336C36.768 -6.336 39.808 -5.328 42.464 -3.312C45.152 -1.296 47.04 1.344 48.128 4.608L42.032 6.96C41.456 4.912 40.448 3.312 39.008 2.16C37.568 0.976 35.84 0.384 33.824 0.384C32 0.384 30.528 0.864 29.408 1.824C28.32 2.752 27.776 3.904 27.776 5.28C27.776 8.224 29.728 10.144 33.632 11.04L38.336 12.384C42.208 13.472 45.088 15.136 46.976 17.376C48.864 19.584 49.808 22.304 49.808 25.536C49.808 28.64 48.608 31.28 46.208 33.456C43.808 35.664 40.272 36.768 35.6 36.768H35.936Z" fill="#D4AF37"/>
+                            <text x="60" y="25" font-family="Playfair Display" font-size="24" fill="#333333">ELEGANCE</text>
+                            <text x="60" y="45" font-family="Montserrat" font-size="12" fill="#333333">NAIL SALON</text>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#booking">Book Now</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">Manicures</a></li>
+                            <li><a href="#services">Pedicures</a></li>
+                            <li><a href="#services">Nail Art</a></li>
+                            <li><a href="#services">Packages</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Contact Us</h4>
+                        <address>
+                            <p><i class="fas fa-map-marker-alt"></i> 123 Beauty Lane</p>
+                            <p>Elegance Plaza, Suite 101</p>
+                            <p>New York, NY 10001</p>
+                            <p><i class="fas fa-phone-alt"></i> (212) 555-7890</p>
+                            <p><i class="fas fa-envelope"></i> info@elegancenails.com</p>
+                        </address>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Hours</h4>
+                        <ul class="hours-list">
+                            <li><span>Monday - Friday:</span> 9:00 AM - 7:00 PM</li>
+                            <li><span>Saturday:</span> 9:00 AM - 6:00 PM</li>
+                            <li><span>Sunday:</span> 11:00 AM - 5:00 PM</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Elegance Nail Salon. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>
