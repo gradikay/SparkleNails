@@ -83,11 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkScrollPosition() {
         if (window.scrollY > 300) {
             header.classList.add('scrolled');
+            // Make sure backToTopBtn exists before trying to modify its classList
             if (backToTopBtn) {
                 backToTopBtn.classList.add('visible');
             }
         } else {
             header.classList.remove('scrolled');
+            // Make sure backToTopBtn exists before trying to modify its classList
             if (backToTopBtn) {
                 backToTopBtn.classList.remove('visible');
             }
