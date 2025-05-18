@@ -83,10 +83,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkScrollPosition() {
         if (window.scrollY > 100) {
             header.classList.add('scrolled');
-            backToTopBtn.classList.add('active');
+            if (backToTopBtn) {
+                backToTopBtn.classList.add('active');
+            }
         } else {
             header.classList.remove('scrolled');
-            backToTopBtn.classList.remove('active');
+            if (backToTopBtn) {
+                backToTopBtn.classList.remove('active');
+            }
         }
     }
 
@@ -226,17 +230,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+            // Don't override normal link behavior for empty href or back-to-top
+            if (this.getAttribute('href') === '#' || this.classList.contains('back-to-top')) {
+                if (this.classList.contains('back-to-top')) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+                return;
+            }
             
             const targetId = this.getAttribute('href');
-            
-            // Don't scroll if it's just "#"
-            if (targetId === '#') return;
-            
             const targetElement = document.querySelector(targetId);
+            
             if (targetElement) {
+                e.preventDefault();
                 // Calculate header height for offset
-                const headerHeight = header.offsetHeight;
+                const headerHeight = header ? header.offsetHeight : 0;
                 const targetPosition = targetElement.offsetTop - headerHeight;
                 
                 window.scrollTo({
