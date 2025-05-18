@@ -6,10 +6,12 @@
 /* Hero Section */
 .hero {
     position: relative;
-    height: 95vh;
+    height: 100vh;
     min-height: 700px;
     overflow: hidden;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .hero-image-container {
@@ -31,6 +33,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    max-width: none;
 }
 
 .hero-overlay {
