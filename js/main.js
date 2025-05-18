@@ -248,13 +248,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Back to top button click event
-    backToTopBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
-    });
+    }
+    
+    // Footer back to top button
+    const footerBackToTop = document.querySelector('.back-to-top');
+    if (footerBackToTop) {
+        footerBackToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     // Initialize everything
     init();

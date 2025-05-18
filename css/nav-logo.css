@@ -1,6 +1,6 @@
 /* 
 * Elegance Nail Salon - Navigation with Square Logo
-* Styling for the square logo next to navigation
+* Styling for the square logo next to the site name
 */
 
 /* Header layout with logo and navigation */
@@ -10,8 +10,8 @@ header .container {
     justify-content: space-between;
 }
 
-/* Main text logo */
-.text-logo {
+/* Logo container with square logo and text logo */
+.logo-container {
     display: flex;
     align-items: center;
 }
@@ -22,31 +22,21 @@ header .container {
     width: 50px;
     height: 50px;
     margin-right: 15px;
+    transition: transform 0.3s ease;
 }
 
-/* Navigation with square logo */
-.nav-with-logo {
+.square-logo:hover {
+    transform: rotate(5deg);
+}
+
+/* Main text logo */
+.text-logo {
     display: flex;
     align-items: center;
 }
 
-/* Adjust spacing between logo and nav */
-.nav-with-logo img {
-    margin-right: 20px;
-}
-
 /* Media queries for responsive layout */
-@media (max-width: 992px) {
-    .nav-with-logo {
-        margin-left: auto;
-    }
-}
-
 @media (max-width: 768px) {
-    .nav-with-logo {
-        width: auto;
-    }
-    
     .square-logo {
         width: 40px;
         height: 40px;
@@ -56,13 +46,4 @@ header .container {
     .text-logo .logo-svg {
         width: 160px;
     }
-}
-
-/* Nav with logo transitions */
-.nav-with-logo img {
-    transition: transform 0.3s ease;
-}
-
-.nav-with-logo:hover img {
-    transform: rotate(5deg);
 }
