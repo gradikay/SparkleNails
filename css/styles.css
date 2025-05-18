@@ -12,6 +12,9 @@
 */
 
 /* ======== Global Styles ======== */
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling for the entire page */
+}
 :root {
     --primary-color: #F8C3C8;
     --primary-light: #FBD7DA;
