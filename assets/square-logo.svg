@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Square background -->
+  <rect width="50" height="50" rx="5" fill="#F8C3C8"/>
+  
+  <!-- Decorative nail polish drip -->
+  <path d="M35 5C38 5 40 6 42 8C44 10 45 12 45 15V35C45 38 44 40 42 42C40 44 38 45 35 45H15C12 45 10 44 8 42C6 40 5 38 5 35V15C5 12 6 10 8 8C10 6 12 5 15 5H35Z" fill="#F8C3C8"/>
+  
+  <!-- Stylized "E" letter for Elegance -->
+  <path d="M15 15H35V20H20V22.5H30V27.5H20V30H35V35H15V15Z" fill="#D4AF37"/>
+  
+  <!-- Small polish drip accent -->
+  <path d="M30 40C30 38.8954 29.1046 38 28 38C26.8954 38 26 38.8954 26 40C26 41.1046 26.8954 42 28 42C29.1046 42 30 41.1046 30 40Z" fill="#D4AF37"/>
+</svg>

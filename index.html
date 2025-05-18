@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/clean-design.css">
     <link rel="stylesheet" href="css/simple-wave-dividers.css">
     <link rel="stylesheet" href="css/elegant-footer.css">
+    <link rel="stylesheet" href="css/nav-logo.css">
 </head>
 <body>
     <!-- Paint Decoration Elements -->
@@ -52,7 +53,7 @@
     <!-- Header Section -->
     <header id="header">
         <div class="container">
-            <div class="logo">
+            <div class="text-logo">
                 <a href="index.html">
                     <svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
                         <path d="M35.936 36.768C31.904 36.768 28.448 35.712 25.568 33.6C22.688 31.456 20.608 28.48 19.328 24.672L25.664 22.08C26.56 24.736 27.936 26.752 29.792 28.128C31.648 29.504 33.76 30.192 36.128 30.192C38.144 30.192 39.776 29.696 41.024 28.704C42.272 27.712 42.896 26.368 42.896 24.672C42.896 23.04 42.336 21.728 41.216 20.736C40.128 19.744 38.464 18.912 36.224 18.24L31.616 16.896C28.192 15.904 25.568 14.336 23.744 12.192C21.952 10.048 21.056 7.488 21.056 4.512C21.056 1.472 22.208 -1.088 24.512 -3.168C26.848 -5.28 29.792 -6.336 33.344 -6.336C36.768 -6.336 39.808 -5.328 42.464 -3.312C45.152 -1.296 47.04 1.344 48.128 4.608L42.032 6.96C41.456 4.912 40.448 3.312 39.008 2.16C37.568 0.976 35.84 0.384 33.824 0.384C32 0.384 30.528 0.864 29.408 1.824C28.32 2.752 27.776 3.904 27.776 5.28C27.776 8.224 29.728 10.144 33.632 11.04L38.336 12.384C42.208 13.472 45.088 15.136 46.976 17.376C48.864 19.584 49.808 22.304 49.808 25.536C49.808 28.64 48.608 31.28 46.208 33.456C43.808 35.664 40.272 36.768 35.6 36.768H35.936Z" fill="#D4AF37"/>
@@ -61,20 +62,23 @@
                     </svg>
                 </a>
             </div>
-            <nav id="navbar">
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="booking.html" class="nav-link">Book Now</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
+            <div class="nav-with-logo">
+                <img src="assets/square-logo.svg" alt="Elegance Nail Salon Logo" class="square-logo">
+                <nav id="navbar">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="booking.html" class="nav-link">Book Now</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -221,8 +225,12 @@
         </div>
     </section>
     
-    <!-- Section Divider -->
-    <hr class="section-divider shadow">
+    <!-- Wave Divider -->
+    <div class="wave-divider wave-medium wave-light">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 30" preserveAspectRatio="none">
+            <path d="M0,10 C150,30 350,5 600,20 C850,35 1050,0 1200,15 L1200,30 L0,30 Z"></path>
+        </svg>
+    </div>
 
     <!-- Why Choose Us Section -->
     <section class="why-choose-us section-padding">
@@ -284,8 +292,12 @@
         </div>
     </section>
     
-    <!-- Section Divider -->
-    <hr class="section-divider accent">
+    <!-- Wave Divider -->
+    <div class="wave-divider wave-medium wave-accent">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 30" preserveAspectRatio="none">
+            <path d="M0,15 C200,0 400,25 600,5 C800,15 1000,30 1200,10 L1200,30 L0,30 Z"></path>
+        </svg>
+    </div>
 
     <!-- Gallery Highlight Section -->
     <section class="gallery-highlight section-padding">
