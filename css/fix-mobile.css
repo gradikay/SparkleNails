@@ -3,11 +3,18 @@
 * Prevents horizontal scrolling and other mobile issues
 */
 
-/* Fix horizontal scrolling on mobile */
-html, body {
+/* Fix horizontal scrolling on mobile while allowing vertical scrolling */
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
+    height: auto;
+    overflow-y: auto;
 }
 
 /* Ensure all containers properly respect viewport width */
