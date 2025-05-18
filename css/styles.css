@@ -298,7 +298,7 @@ img {
 .hero {
     height: 100vh;
     min-height: 600px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://pixabay.com/get/g104134c8e9031d40843437047fc002840f4d9cd74e5658e50696b7754cab9934047c3c743703c33f654c419b4fb2dd242c021f17d999acc45f5cfda1338cb40d_1280.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -777,7 +777,7 @@ img {
 
 /* ======== Booking Section ======== */
 .booking {
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://pixabay.com/get/g80e8acc96551627bf0ee579665a4ef86db5ef58ea60c1929890f5d97be3190a5d3bd0eee9079a23d6a858e7ff560d847c6e9e7b064af6152c577cb914b63e821_1280.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

@@ -9,6 +9,7 @@
     height: 95vh;
     min-height: 700px;
     overflow: hidden;
+    width: 100%;
 }
 
 .hero-image-container {
@@ -18,6 +19,7 @@
     width: 100%;
     height: 100%;
     z-index: 0;
+    overflow: hidden;
 }
 
 .hero-background-image {
@@ -25,6 +27,10 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .hero-overlay {
@@ -33,7 +39,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--hero-overlay);
+    background: linear-gradient(to right, rgba(248, 195, 200, 0.9), rgba(212, 175, 55, 0.7));
     mix-blend-mode: multiply;
     z-index: 1;
 }
@@ -73,6 +79,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    display: block;
     z-index: 0;
 }
 
@@ -82,7 +90,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--hero-overlay);
+    background: linear-gradient(to right, rgba(248, 195, 200, 0.9), rgba(212, 175, 55, 0.7));
     opacity: 0.9;
     z-index: 1;
 }
