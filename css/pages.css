@@ -7,36 +7,45 @@
 .page-banner {
     height: 60vh;
     min-height: 400px;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://pixabay.com/get/g104134c8e9031d40843437047fc002840f4d9cd74e5658e50696b7754cab9934047c3c743703c33f654c419b4fb2dd242c021f17d999acc45f5cfda1338cb40d_1280.jpg');
-    background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--white);
     position: relative;
+    overflow: hidden;
 }
 
-.gallery-banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://pixabay.com/get/g481397305b257da84218d0efc3a71f7f0033a85f80df0a3c4f8bc180e2b2372bf988a6fcfe3e6495e3279b55971403a68e2f96b4fbc30184a660b4d166f0e054_1280.jpg');
-    background-position: center;
+.page-banner .banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
 }
 
-.about-banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://pixabay.com/get/g8a7ca877c9063661bed7c6e6d94f8da8eb1ff2eba5b4cf7d3eb5e95dc1e4ce16e371de2e2eb5f2a7dcf9c3eb10f7a0f43e31347d86f74a23fa5066c5ffa56f16_1280.jpg');
-    background-position: center 30%;
+.page-banner .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
 }
 
-.booking-banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://pixabay.com/get/g80e8acc96551627bf0ee579665a4ef86db5ef58ea60c1929890f5d97be3190a5d3bd0eee9079a23d6a858e7ff560d847c6e9e7b064af6152c577cb914b63e821_1280.jpg');
-    background-position: center;
+.page-banner .banner-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    padding: var(--spacing-xl);
 }
 
 .banner-content {
     max-width: 800px;
     padding: var(--spacing-xl);
-    z-index: 1;
     animation: fadeIn 1.5s ease;
 }
 
