@@ -134,27 +134,36 @@ document.addEventListener('DOMContentLoaded', function() {
      * Set up testimonial slider controls
      */
     function setupTestimonialControls() {
-        // Next testimonial button
-        nextTestimonialBtn.addEventListener('click', () => {
-            updateTestimonial(currentTestimonial + 1);
-        });
-        
-        // Previous testimonial button
-        prevTestimonialBtn.addEventListener('click', () => {
-            updateTestimonial(currentTestimonial - 1);
-        });
-        
-        // Dot navigation
-        testimonialDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                updateTestimonial(index);
-            });
-        });
-        
-        // Auto-advance testimonials every 6 seconds
-        setInterval(() => {
-            updateTestimonial(currentTestimonial + 1);
-        }, 6000);
+        // Check if testimonial elements exist before setting up controls
+        if (testimonialSlides.length > 0) {
+            // Next testimonial button
+            if (nextTestimonialBtn) {
+                nextTestimonialBtn.addEventListener('click', () => {
+                    updateTestimonial(currentTestimonial + 1);
+                });
+            }
+            
+            // Previous testimonial button
+            if (prevTestimonialBtn) {
+                prevTestimonialBtn.addEventListener('click', () => {
+                    updateTestimonial(currentTestimonial - 1);
+                });
+            }
+            
+            // Dot navigation
+            if (testimonialDots.length > 0) {
+                testimonialDots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        updateTestimonial(index);
+                    });
+                });
+            }
+            
+            // Auto-advance testimonials every 6 seconds
+            setInterval(() => {
+                updateTestimonial(currentTestimonial + 1);
+            }, 6000);
+        }
     }
 
     /**
