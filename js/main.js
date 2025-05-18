@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('.nav-menu');
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelectorAll('.nav-link');
-    const backToTopBtn = document.getElementById('back-to-top-btn');
     const sections = document.querySelectorAll('section');
     const tabButtons = document.querySelectorAll('.tab-btn');
     const serviceLists = document.querySelectorAll('.service-list');
@@ -78,21 +77,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /**
-     * Check scroll position to toggle header styles and back to top button visibility
+     * Check scroll position to toggle header styles
      */
     function checkScrollPosition() {
         if (window.scrollY > 300) {
             header.classList.add('scrolled');
-            // Make sure backToTopBtn exists before trying to modify its classList
-            if (backToTopBtn) {
-                backToTopBtn.classList.add('visible');
-            }
         } else {
             header.classList.remove('scrolled');
-            // Make sure backToTopBtn exists before trying to modify its classList
-            if (backToTopBtn) {
-                backToTopBtn.classList.remove('visible');
-            }
         }
     }
 
@@ -232,15 +223,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            // Don't override normal link behavior for empty href or back-to-top
-            if (this.getAttribute('href') === '#' || this.classList.contains('back-to-top')) {
-                if (this.classList.contains('back-to-top')) {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                }
+            // Don't override normal link behavior for empty href
+            if (this.getAttribute('href') === '#') {
                 return;
             }
             
@@ -261,27 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Back to top button click event
-    if (backToTopBtn) {
-        backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-    
-    // Footer back to top button
-    const footerBackToTop = document.querySelector('.back-to-top');
-    if (footerBackToTop) {
-        footerBackToTop.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
+    // No back-to-top buttons anymore
 
     // Initialize everything
     init();
