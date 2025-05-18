@@ -1,0 +1,154 @@
+/* 
+* Elegance Nail Salon - Wave Section Dividers
+* Adds beautiful wave transitions between website sections
+*/
+
+/* ======== Wave Divider Styles ======== */
+.wave-divider {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+    margin-top: -1px; /* Fix any tiny gaps between sections */
+    z-index: 1;
+}
+
+.wave-divider.top {
+    transform: rotate(180deg);
+    margin-bottom: -1px;
+}
+
+.wave-divider svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Position bottom to create the illusion of the wave coming from the section */
+    bottom: 0;
+}
+
+/* Different wave styles */
+.wave-gentle path {
+    fill: var(--primary-light);
+}
+
+.wave-bold path {
+    fill: var(--secondary-color);
+}
+
+.wave-accent path {
+    fill: var(--accent-light);
+    opacity: 0.15;
+}
+
+.wave-white path {
+    fill: #FFFFFF;
+}
+
+/* ======== Wave Animation ======== */
+.wave-anim path {
+    animation: waveAnimation 25s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    animation-delay: -5s;
+}
+
+.wave-anim path:nth-child(2) {
+    animation: waveAnimation 20s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    animation-delay: -2s;
+    opacity: 0.5;
+}
+
+.wave-anim path:nth-child(3) {
+    animation: waveAnimation 15s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    animation-delay: 0s;
+    opacity: 0.3;
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Section backgrounds to match waves */
+.featured-services {
+    background-color: var(--white);
+    position: relative;
+    padding-top: 50px;
+}
+
+.why-choose-us {
+    background-color: var(--primary-light);
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.gallery-highlight {
+    background-color: var(--secondary-color);
+    position: relative;
+    padding-top: 50px;
+}
+
+.testimonials {
+    background-color: var(--white);
+    position: relative;
+    padding-top: 50px;
+}
+
+/* ======== Paint Drip Dividers ======== */
+.drip-divider {
+    position: relative;
+    height: 40px;
+    margin-top: -1px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 30'%3E%3Cpath d='M0,0 C100,40 200,10 300,15 C400,20 500,40 600,30 C700,20 800,15 900,20 C1000,25 1100,30 1200,20 L1200,30 L0,30 Z' fill='%23F8C3C8' opacity='0.5'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 1200px 30px;
+}
+
+.drip-divider.accent {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 30'%3E%3Cpath d='M0,0 C100,40 200,10 300,15 C400,20 500,40 600,30 C700,20 800,15 900,20 C1000,25 1100,30 1200,20 L1200,30 L0,30 Z' fill='%23D4AF37' opacity='0.3'/%3E%3C/svg%3E");
+}
+
+.drip-divider.white {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 30'%3E%3Cpath d='M0,0 C100,40 200,10 300,15 C400,20 500,40 600,30 C700,20 800,15 900,20 C1000,25 1100,30 1200,20 L1200,30 L0,30 Z' fill='%23FFFFFF' opacity='0.9'/%3E%3C/svg%3E");
+}
+
+/* ======== Brush Stroke Dividers ======== */
+.brush-divider {
+    position: relative;
+    height: 50px;
+    margin-top: -1px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 50'%3E%3Cpath d='M0,20 C200,10 400,30 600,20 C800,10 1000,40 1200,20 L1200,50 L0,50 Z' fill='%23FAF0E6' stroke='%23F8C3C8' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 1200px 50px;
+}
+
+.brush-divider.accent {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 50'%3E%3Cpath d='M0,20 C200,10 400,30 600,20 C800,10 1000,40 1200,20 L1200,50 L0,50 Z' fill='%23FAF0E6' stroke='%23D4AF37' stroke-width='0.5'/%3E%3C/svg%3E");
+}
+
+/* ======== Responsive Adjustments ======== */
+@media (max-width: 768px) {
+    .wave-divider {
+        height: 80px;
+    }
+    
+    .drip-divider, .brush-divider {
+        height: 30px;
+        background-size: 800px auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .wave-divider {
+        height: 60px;
+    }
+    
+    .drip-divider, .brush-divider {
+        height: 20px;
+    }
+}
