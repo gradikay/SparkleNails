@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('.nav-menu');
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelectorAll('.nav-link');
-    const backToTopBtn = document.getElementById('backToTop');
+    const backToTopBtn = document.getElementById('back-to-top-btn');
     const sections = document.querySelectorAll('section');
     const tabButtons = document.querySelectorAll('.tab-btn');
     const serviceLists = document.querySelectorAll('.service-list');
@@ -81,15 +81,15 @@ document.addEventListener('DOMContentLoaded', function() {
      * Check scroll position to toggle header styles and back to top button visibility
      */
     function checkScrollPosition() {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 300) {
             header.classList.add('scrolled');
             if (backToTopBtn) {
-                backToTopBtn.classList.add('active');
+                backToTopBtn.classList.add('visible');
             }
         } else {
             header.classList.remove('scrolled');
             if (backToTopBtn) {
-                backToTopBtn.classList.remove('active');
+                backToTopBtn.classList.remove('visible');
             }
         }
     }
@@ -261,8 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Back to top button click event
     if (backToTopBtn) {
-        backToTopBtn.addEventListener('click', function(e) {
-            e.preventDefault();
+        backToTopBtn.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
