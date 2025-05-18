@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const testimonialDots = document.querySelectorAll('.dot');
     const prevTestimonialBtn = document.querySelector('.prev-testimonial');
     const nextTestimonialBtn = document.querySelector('.next-testimonial');
+    const backToTopBtn = document.getElementById('back-to-top-btn');
 
     // Variables
     let currentTestimonial = 0;
@@ -45,9 +46,25 @@ document.addEventListener('DOMContentLoaded', function() {
         // Testimonial slider controls
         setupTestimonialControls();
 
+        // Back to top button click event
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', scrollToTop);
+        }
+
         // Initial calls to set up the page state
         checkScrollPosition();
         activateScrollAnimations();
+        toggleBackToTopButton();
+    }
+    
+    /**
+     * Scroll to top of the page with smooth animation
+     */
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
 
     /**
@@ -74,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleScroll() {
         checkScrollPosition();
         highlightActiveNavLink();
+        toggleBackToTopButton();
     }
 
     /**
@@ -84,6 +102,17 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
+        }
+    }
+    
+    /**
+     * Toggle back to top button visibility based on scroll position
+     */
+    function toggleBackToTopButton() {
+        if (window.scrollY > 500) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
         }
     }
 

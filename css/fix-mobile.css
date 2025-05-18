@@ -110,11 +110,36 @@ img {
     box-sizing: border-box;
 }
 
-/* Fix hero height on mobile */
+/* Fix hero height and content on mobile */
 @media (max-width: 576px) {
     .hero {
         min-height: 500px;
         height: auto;
+        justify-content: center;
+        text-align: center;
+        padding-top: 70px; /* Add padding to account for fixed header */
+    }
+    
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: var(--spacing-md);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
     }
 }
 
