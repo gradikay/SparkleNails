@@ -1,0 +1,128 @@
+/* 
+* Elegance Nail Salon - Mobile Fixes
+* Prevents horizontal scrolling and other mobile issues
+*/
+
+/* Fix horizontal scrolling on mobile */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Ensure all containers properly respect viewport width */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Fix paint decoration elements that might cause overflow */
+.polish-drip,
+.paint-splatter,
+.polish-bottle,
+.paint-stroke {
+    position: absolute;
+    pointer-events: none; /* Prevents interaction with these elements */
+}
+
+/* Ensure these elements don't create horizontal scrollbars */
+@media (max-width: 768px) {
+    .polish-drip-1,
+    .polish-drip-2,
+    .polish-drip-3,
+    .polish-drip-4 {
+        width: 50px; /* Reduce width on mobile */
+    }
+    
+    .paint-stroke {
+        max-width: 80%;
+    }
+}
+
+/* Ensure images don't overflow their containers */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix service cards grid on mobile */
+@media (max-width: 576px) {
+    .service-card-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .service-card {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Fix footer columns on mobile */
+@media (max-width: 768px) {
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-column {
+        width: 100%;
+    }
+}
+
+/* Fix button container width */
+.hero-buttons {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Fix any absolute positioned elements that might cause overflow */
+[class*="splatter-"],
+[class*="bottle-"],
+[class*="stroke-"] {
+    width: auto;
+    max-width: 20%; /* Ensure they don't extend beyond viewport */
+}
+
+/* Fix testimonial slider if it's causing overflow */
+.testimonial-controls {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+/* Fix gallery items to prevent overflow */
+.gallery-highlight-grid {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* Fix hero height on mobile */
+@media (max-width: 576px) {
+    .hero {
+        min-height: 500px;
+        height: auto;
+    }
+}
+
+/* Fix feature grid overflow */
+.features-grid {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ensure all sections have proper padding on mobile */
+@media (max-width: 768px) {
+    section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
