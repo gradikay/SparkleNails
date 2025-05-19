@@ -1,42 +1,19 @@
-/* 
-* Sparkle Nails - Responsive Stylesheet
-* Contains all media queries and responsive styling
-*/
+/**
+ * Sparkle Nails - Responsive CSS
+ * All media queries and responsive design code
+ */
 
-/* === Medium Devices (Tablets) === */
-@media (max-width: 992px) {
-  /* Typography adjustments */
-  h1 {
-    font-size: calc(var(--font-size-xxl) * 0.9);
-  }
-
-  h2 {
-    font-size: calc(var(--font-size-xxl) * 0.7);
-  }
-  
-  /* Container width */
-  .container {
-    max-width: 95%;
-  }
-  
-  /* About section */
-  .about-content {
-    gap: var(--spacing-md);
-  }
-}
-
-/* === Small Devices (Landscape Phones) === */
+/* === Global Responsive Styles === */
 @media (max-width: 768px) {
-  /* Typography */
-  h1 {
-    font-size: calc(var(--font-size-xxl) * 0.8);
+  .row {
+    flex-direction: column;
   }
   
-  h2 {
-    font-size: calc(var(--font-size-xxl) * 0.6);
+  .col {
+    margin-bottom: var(--spacing-md);
   }
-  
-  /* Navigation */
+
+  /* Mobile Navigation */
   .mobile-toggle {
     display: block;
   }
@@ -69,29 +46,8 @@
     display: block;
     padding: var(--spacing-xs) 0;
   }
-  
-  /* Layout adjustments */
-  .row {
-    flex-direction: column;
-  }
-  
-  .col {
-    margin-bottom: var(--spacing-md);
-  }
-  
-  /* Service cards */
-  .service-cards {
-    grid-template-columns: repeat(2, 1fr); /* Two cards per line on mobile */
-    gap: 10px; /* Smaller gap on mobile */
-  }
-  
-  /* Gallery grid */
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr); /* Two cards per line on mobile */
-    gap: 10px; /* Smaller gap on mobile */
-  }
-  
-  /* Hero section */
+
+  /* Hero Section */
   .hero-buttons {
     flex-direction: column;
     align-items: center;
@@ -100,8 +56,14 @@
   .hero-buttons .btn {
     margin-bottom: var(--spacing-sm);
   }
-  
-  /* About section */
+
+  /* Services Section */
+  .service-cards {
+    grid-template-columns: repeat(2, 1fr); /* Two cards per line on mobile */
+    gap: 10px; /* Smaller gap on mobile */
+  }
+
+  /* About Section */
   .about-content {
     flex-direction: column-reverse;
   }
@@ -109,44 +71,87 @@
   .about-image {
     margin-bottom: var(--spacing-md);
   }
-}
 
-/* === Extra Small Devices (Portrait Phones) === */
-@media (max-width: 576px) {
-  /* Typography */
-  h1 {
-    font-size: calc(var(--font-size-xxl) * 0.7);
+  /* Gallery Section */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two cards per line on mobile */
+    gap: 10px; /* Smaller gap on mobile */
   }
-  
-  h2 {
-    font-size: calc(var(--font-size-xxl) * 0.5);
+
+  /* Contact Section */
+  .contact-form-container {
+    flex-direction: column;
   }
-  
-  /* Service cards */
-  .service-cards {
-    grid-template-columns: 1fr; /* One card per line on small mobile */
-  }
-  
-  /* Logo */
-  .logo {
-    font-size: 1.5rem;
-  }
-  
-  /* Footer layout */
-  .footer-col {
-    flex: 100%;
+
+  .contact-info {
     margin-bottom: var(--spacing-md);
   }
-  
-  /* Testimonials */
-  .testimonial {
-    padding: var(--spacing-sm);
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
   }
-  
-  /* Gallery */
-  .filter-button {
-    padding: 0.4rem 0.8rem;
-    margin: 0 3px 8px;
+
+  .footer-links {
+    margin-top: var(--spacing-md);
+  }
+}
+
+/* === Extra Small Devices (phones) === */
+@media (max-width: 480px) {
+  .btn {
+    padding: 8px 16px;
     font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  /* Hero section */
+  .hero {
+    padding-top: 80px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Service cards */
+  .service-cards {
+    grid-template-columns: repeat(1, 1fr); /* One card per line on very small devices */
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: repeat(1, 1fr); /* One card per line on very small devices */
+  }
+
+  /* Testimonials */
+  .testimonial-content {
+    padding: 15px;
+  }
+
+  /* Form inputs */
+  input, textarea, select {
+    padding: 8px;
   }
 }
