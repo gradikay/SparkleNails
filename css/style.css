@@ -5,19 +5,19 @@
 
 /* === Custom CSS Variables === */
 :root {
-  /* Color Palette */
+  /* Color Palette - Improved for accessibility and contrast */
   --pink-light: #ffecef;
-  --pink-medium: #ffb5c2;
-  --pink-dark: #ff7d8f;
-  --pink-hot: #ff4057;
+  --pink-medium: #ff97a8; /* Darkened for better contrast */
+  --pink-dark: #ff5d73; /* Adjusted for better contrast */
+  --pink-hot: #e01b34; /* Darkened for better contrast with white text */
   --purple-light: #f2e7ff;
-  --purple-medium: #e0c6ff;
-  --purple-dark: #c591ff;
-  --gold: #ffd700;
+  --purple-medium: #d1a6ff; /* Adjusted for better contrast */
+  --purple-dark: #a864ff; /* Darkened for better contrast */
+  --gold: #d4af00; /* Darkened gold for better contrast */
   --white: #ffffff;
   --gray-light: #f8f9fa;
-  --gray: #ced4da;
-  --dark: #343a40;
+  --gray: #767676; /* Darker gray for better contrast */
+  --dark: #212529; /* Darkened for better contrast */
   
   /* Typography */
   --font-primary: 'Quicksand', sans-serif;
@@ -110,12 +110,26 @@ img {
 
 a {
   color: var(--pink-hot);
-  text-decoration: none;
+  text-decoration: underline; /* Adding underline for accessibility */
   transition: all var(--transition-fast);
 }
 
 a:hover {
   color: var(--purple-dark);
+  text-decoration: underline; /* Maintain underline on hover */
+}
+
+/* Navigation links and buttons don't need underlines */
+.nav-link, .footer-links a, .btn, .logo a {
+  text-decoration: none;
+}
+
+.nav-link:hover, .footer-links a:hover {
+  text-decoration: underline; /* Add underline on hover for these elements */
+}
+
+.btn:hover, .logo a:hover {
+  text-decoration: none; /* Keep buttons and logo without underlines */
 }
 
 /* === Typography === */
