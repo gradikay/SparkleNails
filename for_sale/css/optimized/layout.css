@@ -1,0 +1,615 @@
+/* 
+* Elegance Nail Salon - Combined Layout Styles
+* This file combines:
+* - simple-wave-dividers.css
+* - clean-design.css
+* - glossy.css
+* - elegant-footer.css
+* - fix-mobile.css
+*/
+
+/* ======== From simple-wave-dividers.css ======== */
+/* Wave divider container */
+.wave-divider {
+    position: relative;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Wave colors */
+.wave-primary {
+    background-color: var(--primary-light);
+}
+
+.wave-secondary {
+    background-color: var(--secondary-color);
+}
+
+.wave-accent {
+    background-color: var(--accent-light);
+}
+
+.wave-light {
+    background-color: var(--gray-light);
+}
+
+.wave-white {
+    background-color: var(--white);
+}
+
+/* Wave sizes */
+.wave-small {
+    height: 20px;
+}
+
+.wave-medium {
+    height: 30px;
+}
+
+.wave-large {
+    height: 50px;
+}
+
+/* SVG styles */
+.wave-divider svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+.wave-divider.wave-primary svg {
+    color: var(--primary-light);
+}
+
+.wave-divider.wave-secondary svg {
+    color: var(--secondary-color);
+}
+
+.wave-divider.wave-accent svg {
+    color: var(--accent-light);
+}
+
+.wave-divider.wave-light svg {
+    color: var(--gray-light);
+}
+
+.wave-divider.wave-white svg {
+    color: var(--white);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .wave-large {
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .wave-large {
+        height: 30px;
+    }
+    
+    .wave-medium {
+        height: 25px;
+    }
+}
+
+/* ======== From clean-design.css ======== */
+/* Clean card design */
+.clean-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-normal);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.clean-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Clean section styling */
+.clean-section {
+    background-color: var(--white);
+    border-top: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+}
+
+/* Clean button styling */
+.clean-btn {
+    background-color: var(--white);
+    border: 1px solid var(--gray);
+    color: var(--text-color);
+    padding: 12px 25px;
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-normal);
+}
+
+.clean-btn:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* Clean form inputs */
+.clean-input {
+    border: 1px solid var(--gray);
+    border-radius: var(--border-radius-sm);
+    padding: 12px 15px;
+    width: 100%;
+    transition: all var(--transition-normal);
+}
+
+.clean-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(248, 195, 200, 0.2);
+    outline: none;
+}
+
+/* Clean dividers */
+.clean-divider {
+    height: 1px;
+    background-color: var(--gray);
+    margin: var(--spacing-lg) 0;
+}
+
+/* Clean badges */
+.clean-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    background-color: var(--primary-light);
+    color: var(--text-color);
+}
+
+/* ======== From glossy.css ======== */
+/* Glossy gradient variables */
+:root {
+    --glossy-gradient-pink: linear-gradient(135deg, #FDD8D8 0%, #F8C3C8 50%, #F9ABB2 100%);
+    --glossy-gradient-gold: linear-gradient(135deg, #F2D675 0%, #D4AF37 50%, #AA8C2C 100%);
+    --glossy-border: 1px solid rgba(255, 255, 255, 0.2);
+    --glossy-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Glossy card styling */
+.glass-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--glossy-shadow);
+    border: var(--glossy-border);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Glossy button styling */
+.glossy-btn {
+    background: var(--glossy-gradient-gold);
+    border: var(--glossy-border);
+    border-radius: var(--border-radius-md);
+    padding: 12px 30px;
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.glossy-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.glossy-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+}
+
+.glossy-btn:hover::before {
+    left: 100%;
+}
+
+/* Glossy section styling */
+.glossy-section {
+    background: var(--glossy-gradient-pink);
+    padding: var(--spacing-xxl) 0;
+    position: relative;
+}
+
+.glossy-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%);
+}
+
+/* Glossy text effect */
+.shimmer {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-light) 50%, var(--accent-color) 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Glossy badge */
+.glossy-badge {
+    background: var(--glossy-gradient-gold);
+    padding: 5px 12px;
+    border-radius: 20px;
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 3px 6px rgba(212, 175, 55, 0.3);
+}
+
+/* Glossy forms */
+.glossy-input {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    border: var(--glossy-border);
+    border-radius: var(--border-radius-sm);
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.glossy-input:focus {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    border-color: var(--accent-color);
+}
+
+.social-icons a:hover {
+    background: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.footer-menu li a, .footer a {
+    color: var(--gray-light);
+    transition: all 0.3s ease;
+}
+
+.footer-menu li a:hover, .footer a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    position: relative;
+    z-index: 1;
+    padding-top: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ======== Back to Top Button Enhancement ======== */
+.back-to-top {
+    background: var(--glossy-gradient-gold);
+    border-radius: 50%;
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+    transition: all 0.4s ease;
+    border: var(--glossy-border);
+}
+
+.back-to-top:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(212, 175, 55, 0.7);
+}
+
+/* ======== Welcome Section Enhancement ======== */
+.welcome-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.welcome-text {
+    flex: 1;
+}
+
+.welcome-text h2 {
+    position: relative;
+    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    font-size: 2.5rem;
+    color: var(--accent-dark);
+}
+
+.welcome-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--glossy-gradient-gold);
+}
+
+/* ======== From elegant-footer.css ======== */
+/* Footer main styling */
+.footer {
+    background-color: var(--text-color);
+    color: var(--gray-light);
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    position: relative;
+}
+
+.footer-top {
+    padding-bottom: var(--spacing-lg);
+}
+
+.footer-logo {
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-logo img {
+    height: 60px;
+    width: auto;
+}
+
+.footer-desc {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+    max-width: 300px;
+}
+
+/* Footer links section */
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-column h4 {
+    color: var(--white);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.footer-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-menu li {
+    margin-bottom: 10px;
+}
+
+.footer-menu li a {
+    color: var(--gray-light);
+    transition: all var(--transition-normal);
+    display: block;
+}
+
+.footer-menu li a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+/* Footer social icons */
+.social-icons {
+    display: flex;
+    margin-top: var(--spacing-md);
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+    color: var(--white);
+    transition: all var(--transition-normal);
+}
+
+.social-icons a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+/* Footer bottom section */
+.footer-bottom {
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.footer-bottom a {
+    color: var(--gray-light);
+    transition: color var(--transition-fast);
+}
+
+.footer-bottom a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer newsletter form */
+.newsletter-form {
+    display: flex;
+    max-width: 400px;
+    margin-top: var(--spacing-sm);
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.newsletter-btn {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+    cursor: pointer;
+    transition: background-color var(--transition-normal);
+}
+
+.newsletter-btn:hover {
+    background-color: var(--accent-dark);
+}
+
+/* Footer decoration */
+.footer-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color), var(--primary-light));
+}
+
+/* ======== From fix-mobile.css ======== */
+/* Fix footer columns on mobile */
+@media (max-width: 768px) {
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-column {
+        width: 100%;
+    }
+}
+
+/* Fix button container width */
+.hero-buttons {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Fix any absolute positioned elements that might cause overflow */
+[class*="splatter-"],
+[class*="bottle-"],
+[class*="stroke-"] {
+    width: auto;
+    max-width: 20%; /* Ensure they don't extend beyond viewport */
+}
+
+/* Fix testimonial slider if it's causing overflow */
+.testimonial-controls {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+/* Fix gallery items to prevent overflow */
+.gallery-highlight-grid {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* Fix hero height and content on mobile */
+@media (max-width: 576px) {
+    .hero {
+        min-height: 500px;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+        padding-top: 70px; /* Add padding to account for fixed header */
+    }
+    
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: var(--spacing-md);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+}

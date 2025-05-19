@@ -1,0 +1,354 @@
+/* 
+* Elegance Nail Salon - Paint Effects CSS
+* Creative nail polish and paint splatter effects for a nail salon website
+*/
+
+/* ======== Paint Splatter Background ======== */
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Paint Splatters - Fixed Position in Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.035;
+    background: 
+        radial-gradient(circle at 15% 25%, var(--primary-color) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, var(--accent-color) 0%, transparent 40%),
+        radial-gradient(circle at 35% 85%, var(--primary-light) 0%, transparent 30%),
+        radial-gradient(circle at 65% 15%, var(--accent-light) 0%, transparent 35%);
+}
+
+/* Nail Polish Drips */
+.polish-drip {
+    position: absolute;
+    width: 70px;
+    height: 250px;
+    border-radius: 35px 35px 0 0;
+    transform-origin: center bottom;
+    z-index: -1;
+    opacity: 0.07;
+}
+
+.polish-drip::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    border-radius: 35px 35px 0 0;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.polish-drip-1 {
+    background: var(--primary-color);
+    top: 200px;
+    left: -20px;
+    transform: rotate(-15deg);
+    height: 200px;
+}
+
+.polish-drip-2 {
+    background: var(--accent-color);
+    top: 150px;
+    right: -30px;
+    transform: rotate(20deg);
+    height: 280px;
+}
+
+.polish-drip-3 {
+    background: var(--primary-dark);
+    bottom: 0;
+    left: 25%;
+    transform: rotate(-5deg);
+    height: 180px;
+}
+
+.polish-drip-4 {
+    background: var(--accent-light);
+    bottom: 20%;
+    right: 15%;
+    transform: rotate(10deg);
+    height: 220px;
+}
+
+/* Paint Splatter Elements */
+.paint-splatter {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(1px);
+    z-index: -1;
+    opacity: 0.07;
+}
+
+.splatter-1 {
+    width: 120px;
+    height: 120px;
+    background: var(--primary-color);
+    top: 15%;
+    left: 10%;
+    transform: rotate(45deg) scale(1.2, 0.8);
+}
+
+.splatter-2 {
+    width: 150px;
+    height: 150px;
+    background: var(--accent-color);
+    top: 40%;
+    right: 5%;
+    transform: rotate(-30deg) scale(0.9, 1.1);
+}
+
+.splatter-3 {
+    width: 100px;
+    height: 100px;
+    background: var(--primary-light);
+    bottom: 20%;
+    left: 15%;
+    transform: rotate(15deg) scale(1.1, 0.9);
+}
+
+.splatter-4 {
+    width: 180px;
+    height: 180px;
+    background: var(--accent-light);
+    bottom: 15%;
+    right: 10%;
+    transform: rotate(-10deg) scale(0.8, 1.2);
+}
+
+/* Nail Polish Bottles */
+.polish-bottle {
+    position: fixed;
+    width: 60px;
+    height: 90px;
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0.05;
+}
+
+.polish-bottle::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 25px;
+    border-radius: 10px 10px 0 0;
+    background: inherit;
+    opacity: 0.8;
+}
+
+.polish-bottle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 10px 10px;
+}
+
+.bottle-1 {
+    background: var(--primary-color);
+    top: 30%;
+    left: 5%;
+    transform: rotate(-10deg);
+}
+
+.bottle-2 {
+    background: var(--accent-color);
+    top: 20%;
+    right: 7%;
+    transform: rotate(5deg);
+}
+
+.bottle-3 {
+    background: var(--primary-dark);
+    bottom: 15%;
+    left: 7%;
+    transform: rotate(8deg);
+}
+
+.bottle-4 {
+    background: var(--accent-dark);
+    bottom: 25%;
+    right: 5%;
+    transform: rotate(-7deg);
+}
+
+/* Paint Brush Strokes */
+.paint-stroke {
+    position: absolute;
+    height: 20px;
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0.1;
+    transform-origin: center left;
+}
+
+.stroke-1 {
+    background: var(--accent-color);
+    width: 200px;
+    top: 25%;
+    left: 0;
+    transform: rotate(25deg);
+}
+
+.stroke-2 {
+    background: var(--primary-color);
+    width: 300px;
+    top: 60%;
+    right: 0;
+    transform: rotate(-15deg);
+}
+
+.stroke-3 {
+    background: var(--accent-light);
+    width: 150px;
+    bottom: 30%;
+    left: 20%;
+    transform: rotate(-10deg);
+}
+
+.stroke-4 {
+    background: var(--primary-light);
+    width: 250px;
+    top: 45%;
+    right: 15%;
+    transform: rotate(5deg);
+}
+
+/* Section Background Enhancements */
+.why-choose-us {
+    position: relative;
+    overflow: hidden;
+}
+
+.why-choose-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23F8C3C8" opacity="0.1"/></svg>');
+    opacity: 0.05;
+    z-index: -1;
+}
+
+.featured-services {
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150"><path d="M75,30 L120,75 L75,120 L30,75 Z" fill="%23D4AF37" opacity="0.1"/></svg>');
+    opacity: 0.05;
+    z-index: -1;
+}
+
+/* Polish Drip Animation for CTA and Features */
+.cta-section, .feature-icon {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom right, var(--primary-color), var(--accent-color));
+    filter: blur(20px);
+    opacity: 0.2;
+    animation: drip 15s infinite ease-in-out;
+}
+
+@keyframes drip {
+    0% {
+        transform: translateY(-100%);
+    }
+    20% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(calc(100% + 50px));
+    }
+}
+
+/* Nail service highlight effects */
+.service-card-image::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.7;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.service-card:nth-child(2n) .service-card-image::before {
+    background: var(--primary-color);
+    box-shadow: 0 0 20px rgba(248, 195, 200, 0.5);
+    top: -10px;
+    left: -10px;
+    right: auto;
+}
+
+/* Adding animated brush strokes to the hero section */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--primary-color));
+    opacity: 0.5;
+    z-index: 1;
+    animation: brushStroke 8s infinite linear;
+    background-size: 200% 100%;
+}
+
+@keyframes brushStroke {
+    0% {
+        background-position: 0% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .polish-drip, .paint-splatter, .polish-bottle {
+        opacity: 0.03;
+    }
+    
+    .paint-stroke {
+        display: none;
+    }
+}
