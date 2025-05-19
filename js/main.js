@@ -10,10 +10,26 @@ document.addEventListener('DOMContentLoaded', function() {
     initTestimonialSlider();
     initAnimations();
     initContactForm();
+    lazyLoadImages();
     
     // Add sparkle cursor effect to the body
     document.body.classList.add('heart-cursor');
 });
+
+/**
+ * Apply lazy loading to all images on the page
+ */
+function lazyLoadImages() {
+    // Find all images on the page
+    const images = document.querySelectorAll('img');
+    
+    // Add loading="lazy" attribute to all images that don't already have it
+    images.forEach(img => {
+        if (!img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
+    });
+}
 
 /**
  * Handle navigation functionality
