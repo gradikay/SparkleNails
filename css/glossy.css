@@ -422,7 +422,7 @@ body {
     position: relative;
     background: linear-gradient(to bottom, #333333, #222222);
     color: var(--white);
-    border-top: 5px solid var(--accent-color);
+    border-top: 5px solid var(--primary-color);
 }
 
 .footer::before {
@@ -442,7 +442,7 @@ body {
 }
 
 .footer h4 {
-    color: var(--accent-color);
+    color: var(--primary-color);
     margin-bottom: var(--spacing-md);
     font-size: 1.4rem;
 }

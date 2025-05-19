@@ -1,14 +1,14 @@
 /* 
-* Elegance Nail Salon - Main CSS Styles
+* TechnoNails - Main CSS Styles (Techno Redesign)
 * Colors: 
-* - Primary: #C41E3A (rich red)
-* - Secondary: #FAF0E6 (linen white)
-* - Accent: #8B0000 (dark red)
-* - Text: #333333 (dark grey)
-* - Background: #FFFFFF (white)
+* - Primary: #00F0FF (neon cyan)
+* - Secondary: #121212 (near black)
+* - Accent: #FF00C8 (neon pink)
+* - Text: #FFFFFF (white)
+* - Background: #0A0A0A (almost black)
 * Typography:
-* - Headings: Playfair Display
-* - Body: Montserrat
+* - Headings: 'Orbitron', sans-serif
+* - Body: 'Roboto', sans-serif
 */
 
 /* ======== Global Styles ======== */
@@ -16,30 +16,32 @@ html {
     scroll-behavior: smooth; /* Enable smooth scrolling for the entire page */
 }
 :root {
-    --primary-color: #C41E3A;
-    --primary-light: #D84258;
-    --primary-dark: #9C0E26;
-    --secondary-color: #FAF0E6;
-    --secondary-dark: #EFE0D1;
-    --accent-color: #8B0000;
-    --accent-light: #A30000;
-    --accent-dark: #6B0000;
-    --text-color: #333333;
-    --text-light: #666666;
+    --primary-color: #00F0FF;
+    --primary-light: #80F7FF;
+    --primary-dark: #00C8D4;
+    --secondary-color: #121212;
+    --secondary-dark: #0A0A0A;
+    --accent-color: #FF00C8;
+    --accent-light: #FF5FE0;
+    --accent-dark: #C800A0;
+    --text-color: #FFFFFF;
+    --text-light: #CCCCCC;
     --white: #FFFFFF;
     --black: #000000;
-    --gray-light: #F5F5F5;
-    --gray: #CCCCCC;
+    --gray-light: #333333;
+    --gray: #555555;
     --spacing-xs: 8px;
     --spacing-sm: 16px;
     --spacing-md: 24px;
     --spacing-lg: 32px;
     --spacing-xl: 48px;
     --spacing-xxl: 64px;
-    --border-radius-sm: 4px;
-    --border-radius-md: 8px;
-    --border-radius-lg: 16px;
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius-sm: 0px;
+    --border-radius-md: 0px;
+    --border-radius-lg: 0px;
+    --box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    --neon-glow: 0 0 10px rgba(0, 240, 255, 0.5), 0 0 20px rgba(0, 240, 255, 0.3), 0 0 30px rgba(0, 240, 255, 0.1);
+    --accent-glow: 0 0 10px rgba(255, 0, 200, 0.5), 0 0 20px rgba(255, 0, 200, 0.3), 0 0 30px rgba(255, 0, 200, 0.1);
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
@@ -57,9 +59,14 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: var(--text-color);
-    background-color: var(--white);
+    background-color: var(--secondary-dark);
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 200, 0.05) 0%, transparent 20%),
+        linear-gradient(to bottom, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.95));
+    background-attachment: fixed;
     line-height: 1.6;
     overflow-x: hidden;
 }
