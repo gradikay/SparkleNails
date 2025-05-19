@@ -999,7 +999,7 @@ address i {
 }
 
 .footer-legal a {
-    color: var(--gray);
+    color: var(--white);
     font-size: 0.9rem;
 }
 
