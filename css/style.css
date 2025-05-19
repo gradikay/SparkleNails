@@ -184,6 +184,12 @@ p {
   margin-top: 10px;
 }
 
+.section-subtitle {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-md);
+  color: var(--dark);
+}
+
 /* === Buttons === */
 .btn {
   display: inline-block;
