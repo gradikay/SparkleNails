@@ -1,9 +1,9 @@
 /* 
 * Elegance Nail Salon - Main CSS Styles
 * Colors: 
-* - Primary: #F8C3C8 (soft pink)
+* - Primary: #C41E3A (rich red)
 * - Secondary: #FAF0E6 (linen white)
-* - Accent: #D4AF37 (gold)
+* - Accent: #8B0000 (dark red)
 * - Text: #333333 (dark grey)
 * - Background: #FFFFFF (white)
 * Typography:
@@ -16,14 +16,14 @@ html {
     scroll-behavior: smooth; /* Enable smooth scrolling for the entire page */
 }
 :root {
-    --primary-color: #F8C3C8;
-    --primary-light: #FBD7DA;
-    --primary-dark: #E5A6AB;
+    --primary-color: #C41E3A;
+    --primary-light: #D84258;
+    --primary-dark: #9C0E26;
     --secondary-color: #FAF0E6;
     --secondary-dark: #EFE0D1;
-    --accent-color: #D4AF37;
-    --accent-light: #E6C662;
-    --accent-dark: #B39024;
+    --accent-color: #8B0000;
+    --accent-light: #A30000;
+    --accent-dark: #6B0000;
     --text-color: #333333;
     --text-light: #666666;
     --white: #FFFFFF;
