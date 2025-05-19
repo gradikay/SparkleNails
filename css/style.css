@@ -108,7 +108,7 @@ a {
 
 a:hover {
   color: var(--purple-dark);
-  text-decoration: underline; /* Maintain underline on hover */
+  text-decoration: none; /* Remove underline on hover */
 }
 
 /* Navigation links, buttons, and icon links don't need underlines */
@@ -117,7 +117,7 @@ a:hover {
 }
 
 .nav-link:hover, .footer-links a:hover {
-  text-decoration: underline; /* Add underline on hover for these elements */
+  text-decoration: none; /* Remove underline on hover for these elements */
 }
 
 .btn:hover, .logo a:hover, .social-icon:hover {
