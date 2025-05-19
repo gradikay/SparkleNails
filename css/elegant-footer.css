@@ -273,7 +273,7 @@ address a:hover {
     .footer-columns {
         gap: 40px;
     }
-    
+
     .footer-column {
         min-width: 45%;
     }
@@ -283,8 +283,15 @@ address a:hover {
     .footer-column {
         min-width: 100%;
     }
-    
+
     .back-to-top {
         bottom: 60px;
     }
+}
+
+/* Make footer legal links white and more visible */
+.footer-legal a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
