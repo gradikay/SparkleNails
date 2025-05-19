@@ -55,6 +55,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100%; /* Ensure full width */
 }
 
 body {
@@ -63,7 +65,9 @@ body {
   color: var(--dark);
   line-height: 1.6;
   background-color: var(--pink-light);
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100%; /* Ensure full width */
+  position: relative; /* Establish positioning context */
   background-image: 
     radial-gradient(circle at 30% 30%, var(--purple-light) 0%, transparent 20%),
     radial-gradient(circle at 70% 70%, var(--pink-light) 0%, transparent 25%);
@@ -457,12 +461,24 @@ header.scrolled {
   border-radius: var(--border-radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   position: relative;
+  -webkit-tap-highlight-color: transparent; /* Remove default mobile tap highlight */
 }
 
-.service-card:hover {
+.service-card:hover, 
+.service-card:active,
+.service-card:focus {
   transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Ensure touch devices get the same effect */
+@media (hover: none) {
+  .service-card:active {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+  }
 }
 
 .service-image {
@@ -545,6 +561,7 @@ header.scrolled {
   overflow: hidden;
   aspect-ratio: 1/1;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* Remove default mobile tap highlight */
 }
 
 .gallery-item img {
@@ -569,12 +586,27 @@ header.scrolled {
   transition: opacity var(--transition-fast);
 }
 
-.gallery-item:hover .gallery-overlay {
+.gallery-item:hover .gallery-overlay,
+.gallery-item:active .gallery-overlay,
+.gallery-item:focus .gallery-overlay {
   opacity: 1;
 }
 
-.gallery-item:hover img {
+.gallery-item:hover img,
+.gallery-item:active img,
+.gallery-item:focus img {
   transform: scale(1.1);
+}
+
+/* Ensure touch devices get the same effect */
+@media (hover: none) {
+  .gallery-item:active .gallery-overlay {
+    opacity: 1;
+  }
+  
+  .gallery-item:active img {
+    transform: scale(1.1);
+  }
 }
 
 .gallery-title {
