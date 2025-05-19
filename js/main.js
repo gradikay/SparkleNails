@@ -3,6 +3,17 @@
  * Handles all interactive elements for our super girly nail salon website
  */
 
+// Run lazy loading immediately, before waiting for DOMContentLoaded
+// This ensures images get the lazy attribute before they start loading
+(function() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (!img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
+    });
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
     initNavigation();
@@ -10,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initTestimonialSlider();
     initAnimations();
     initContactForm();
-    lazyLoadImages();
+    lazyLoadImages(); // Additional check for any dynamically added images
     initMobileTouchEffects(); // Add mobile touch effects
     
     // Add sparkle cursor effect to the body
