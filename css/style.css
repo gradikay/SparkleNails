@@ -119,8 +119,8 @@ a:hover {
   text-decoration: underline; /* Maintain underline on hover */
 }
 
-/* Navigation links and buttons don't need underlines */
-.nav-link, .footer-links a, .btn, .logo a {
+/* Navigation links, buttons, and icon links don't need underlines */
+.nav-link, .footer-links a, .btn, .logo a, .social-icon {
   text-decoration: none;
 }
 
@@ -128,8 +128,8 @@ a:hover {
   text-decoration: underline; /* Add underline on hover for these elements */
 }
 
-.btn:hover, .logo a:hover {
-  text-decoration: none; /* Keep buttons and logo without underlines */
+.btn:hover, .logo a:hover, .social-icon:hover {
+  text-decoration: none; /* Keep buttons, logo, and social icons without underlines */
 }
 
 /* === Typography === */
