@@ -92,15 +92,7 @@ body {
   flex: 1;
 }
 
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column;
-  }
-  
-  .col {
-    margin-bottom: var(--spacing-md);
-  }
-}
+/* Moved to responsive.css */
 
 img {
   max-width: 100%;
