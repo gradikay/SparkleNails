@@ -1,268 +1,65 @@
 /**
- * Elegance Nail Salon - Main JavaScript
- * Handles core functionality: navigation, animations, and global features
+ * TechnoNails - Main JavaScript File
+ * Controls interactive elements of the website
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    'use strict';
+    // Initialize all functions
+    initNavigation();
+    initScrollEffects();
+    initGalleryFilter();
+    initTestimonialSlider();
+    initFormValidation();
+    
+    // Add animation classes on scroll
+    animateOnScroll();
+});
 
-    // DOM Elements
-    const header = document.getElementById('header');
+/**
+ * Handle navigation menu functionality
+ */
+function initNavigation() {
+    // Header scroll effect
+    const header = document.querySelector('header');
+    
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    const hamburger = document.querySelector('.hamburger');
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('active') && 
+            !e.target.closest('.nav-menu') && 
+            !e.target.closest('.mobile-menu-toggle')) {
+            navMenu.classList.remove('active');
+        }
+    });
+    
+    // Toggle mobile menu
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    }
+    
+    // Close mobile menu when clicking on a nav link
     const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section');
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const serviceLists = document.querySelectorAll('.service-list');
-    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-    const testimonialDots = document.querySelectorAll('.dot');
-    const prevTestimonialBtn = document.querySelector('.prev-testimonial');
-    const nextTestimonialBtn = document.querySelector('.next-testimonial');
-    const backToTopBtn = document.getElementById('back-to-top-btn');
-
-    // Variables
-    let currentTestimonial = 0;
-
-    /**
-     * Initialize all event listeners and functionality
-     */
-    function init() {
-        // Mobile Navigation Toggle
-        hamburger.addEventListener('click', toggleMobileMenu);
-
-        // Close mobile menu when nav link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
         });
-
-        // Service tabs functionality
-        tabButtons.forEach(button => {
-            button.addEventListener('click', switchServiceTab);
-        });
-
-        // Scrolling events and animations
-        window.addEventListener('scroll', handleScroll);
-
-        // Testimonial slider controls
-        setupTestimonialControls();
-
-        // Back to top button click event
-        if (backToTopBtn) {
-            backToTopBtn.addEventListener('click', scrollToTop);
-        }
-
-        // Initial calls to set up the page state
-        checkScrollPosition();
-        activateScrollAnimations();
-        toggleBackToTopButton();
-    }
+    });
     
-    /**
-     * Scroll to top of the page with smooth animation
-     */
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-
-    /**
-     * Toggle mobile menu visibility
-     */
-    function toggleMobileMenu() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        document.body.classList.toggle('no-scroll');
-    }
-
-    /**
-     * Close mobile menu
-     */
-    function closeMobileMenu() {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-    }
-
-    /**
-     * Handle scrolling events: sticky header, back to top button, and active nav links
-     */
-    function handleScroll() {
-        checkScrollPosition();
-        highlightActiveNavLink();
-        toggleBackToTopButton();
-    }
-
-    /**
-     * Check scroll position to toggle header styles
-     */
-    function checkScrollPosition() {
-        if (window.scrollY > 300) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    }
-    
-    /**
-     * Toggle back to top button visibility based on scroll position
-     */
-    function toggleBackToTopButton() {
-        if (window.scrollY > 500) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
-    }
-
-    /**
-     * Highlight the corresponding nav link when scrolling through sections
-     */
-    function highlightActiveNavLink() {
-        let currentSection = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 150;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                currentSection = sectionId;
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    /**
-     * Switch between service tabs
-     */
-    function switchServiceTab(e) {
-        // Remove active class from all buttons and service lists
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        serviceLists.forEach(list => list.classList.remove('active'));
-        
-        // Add active class to clicked button
-        e.target.classList.add('active');
-        
-        // Show the corresponding service list
-        const category = e.target.dataset.category;
-        document.getElementById(category).classList.add('active');
-    }
-
-    /**
-     * Set up testimonial slider controls
-     */
-    function setupTestimonialControls() {
-        // Check if testimonial elements exist before setting up controls
-        if (testimonialSlides.length > 0) {
-            // Next testimonial button
-            if (nextTestimonialBtn) {
-                nextTestimonialBtn.addEventListener('click', () => {
-                    updateTestimonial(currentTestimonial + 1);
-                });
-            }
-            
-            // Previous testimonial button
-            if (prevTestimonialBtn) {
-                prevTestimonialBtn.addEventListener('click', () => {
-                    updateTestimonial(currentTestimonial - 1);
-                });
-            }
-            
-            // Dot navigation
-            if (testimonialDots.length > 0) {
-                testimonialDots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => {
-                        updateTestimonial(index);
-                    });
-                });
-            }
-            
-            // Auto-advance testimonials every 6 seconds
-            setInterval(() => {
-                updateTestimonial(currentTestimonial + 1);
-            }, 6000);
-        }
-    }
-
-    /**
-     * Update the active testimonial
-     * @param {number} index - The index of the testimonial to show
-     */
-    function updateTestimonial(index) {
-        // Handle wrapping around
-        if (index < 0) {
-            index = testimonialSlides.length - 1;
-        } else if (index >= testimonialSlides.length) {
-            index = 0;
-        }
-        
-        // Update current index
-        currentTestimonial = index;
-        
-        // Remove active class from all slides and dots
-        testimonialSlides.forEach(slide => slide.classList.remove('active'));
-        testimonialDots.forEach(dot => dot.classList.remove('active'));
-        
-        // Add active class to current slide and dot
-        testimonialSlides[currentTestimonial].classList.add('active');
-        testimonialDots[currentTestimonial].classList.add('active');
-    }
-
-    /**
-     * Activate scroll animations for elements
-     */
-    function activateScrollAnimations() {
-        // Options for the Intersection Observer
-        const options = {
-            root: null, // viewport
-            rootMargin: '0px',
-            threshold: 0.1 // 10% of the element visible
-        };
-        
-        // Callback function for the Intersection Observer
-        const callback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                    observer.unobserve(entry.target); // Stop observing once animation is triggered
-                }
-            });
-        };
-        
-        // Create an Intersection Observer with the callback
-        const observer = new IntersectionObserver(callback, options);
-        
-        // Target elements to animate
-        const animateElements = document.querySelectorAll('.section-header, .service-item, .gallery-item, .about-content, .info-item, .booking-form');
-        
-        // Observe each element
-        animateElements.forEach(element => {
-            observer.observe(element);
-        });
-    }
-
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            // Don't override normal link behavior for empty href
-            if (this.getAttribute('href') === '#') {
-                return;
-            }
+        anchor.addEventListener('click', function (e) {
+            if (this.getAttribute('href') === '#') return;
             
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
                 e.preventDefault();
-                // Calculate header height for offset
                 const headerHeight = header ? header.offsetHeight : 0;
                 const targetPosition = targetElement.offsetTop - headerHeight;
                 
@@ -273,9 +70,253 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+}
 
-    // No back-to-top buttons anymore
+/**
+ * Handle various scroll effects
+ */
+function initScrollEffects() {
+    const header = document.querySelector('header');
+    
+    window.addEventListener('scroll', () => {
+        // Header scroll effect
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        // Highlight active nav section
+        highlightActiveNavLink();
+    });
+}
 
-    // Initialize everything
-    init();
-});
+/**
+ * Highlight the active navigation link based on scroll position
+ */
+function highlightActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        
+        if (window.scrollY >= sectionTop - 100) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+/**
+ * Handle gallery filtering functionality
+ */
+function initGalleryFilter() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    if (filterButtons.length && galleryItems.length) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+}
+
+/**
+ * Handle testimonial slider functionality
+ */
+function initTestimonialSlider() {
+    const testimonials = document.querySelectorAll('.testimonial');
+    const dots = document.querySelectorAll('.slider-dot');
+    
+    if (testimonials.length && dots.length) {
+        // Show first testimonial by default
+        showTestimonial(0);
+        
+        // Add click event to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showTestimonial(index);
+            });
+        });
+        
+        // Auto rotate testimonials
+        let currentIndex = 0;
+        
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            showTestimonial(currentIndex);
+        }, 5000);
+    }
+    
+    function showTestimonial(index) {
+        // Hide all testimonials
+        testimonials.forEach(testimonial => {
+            testimonial.style.display = 'none';
+        });
+        
+        // Show selected testimonial
+        testimonials[index].style.display = 'block';
+        
+        // Update active dot
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+}
+
+/**
+ * Handle form validation
+ */
+function initFormValidation() {
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+            let isValid = true;
+            
+            // Validate name
+            if (name.value.trim() === '') {
+                showError(name, 'Name is required');
+                isValid = false;
+            } else {
+                clearError(name);
+            }
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email.value.trim() === '') {
+                showError(email, 'Email is required');
+                isValid = false;
+            } else if (!emailRegex.test(email.value.trim())) {
+                showError(email, 'Please enter a valid email');
+                isValid = false;
+            } else {
+                clearError(email);
+            }
+            
+            // Validate message
+            if (message.value.trim() === '') {
+                showError(message, 'Message is required');
+                isValid = false;
+            } else {
+                clearError(message);
+            }
+            
+            if (isValid) {
+                // Simulate form submission
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                
+                setTimeout(() => {
+                    contactForm.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                    
+                    // Show success message
+                    const successMsg = document.createElement('div');
+                    successMsg.className = 'form-success';
+                    successMsg.textContent = 'Thank you! Your message has been sent.';
+                    contactForm.appendChild(successMsg);
+                    
+                    setTimeout(() => {
+                        successMsg.remove();
+                    }, 5000);
+                }, 1500);
+            }
+        });
+        
+        // Handle input events to clear errors when user types
+        const inputs = contactForm.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                clearError(input);
+            });
+        });
+    }
+    
+    function showError(input, message) {
+        const formGroup = input.parentElement;
+        const errorElement = formGroup.querySelector('.form-error');
+        
+        if (errorElement) {
+            errorElement.textContent = message;
+        } else {
+            const error = document.createElement('div');
+            error.className = 'form-error';
+            error.textContent = message;
+            error.style.color = 'var(--secondary)';
+            error.style.fontSize = '0.85rem';
+            error.style.marginTop = '5px';
+            formGroup.appendChild(error);
+        }
+        
+        input.style.borderColor = 'var(--secondary)';
+    }
+    
+    function clearError(input) {
+        const formGroup = input.parentElement;
+        const errorElement = formGroup.querySelector('.form-error');
+        
+        if (errorElement) {
+            errorElement.remove();
+        }
+        
+        input.style.borderColor = '';
+    }
+}
+
+/**
+ * Animate elements when they come into view
+ */
+function animateOnScroll() {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+    
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+}
