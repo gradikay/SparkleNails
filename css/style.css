@@ -206,7 +206,7 @@ p {
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
-  color: var(--white);
+  color: var(--white) !important; /* Ensure text remains white on hover */
 }
 
 .btn:hover::before {
@@ -288,6 +288,14 @@ header.scrolled {
   padding: 0.5rem 0;
 }
 
+/* Book Now button in navigation */
+.nav-item .btn {
+  padding: 0.5rem 1.5rem;
+  margin-top: 0;
+  white-space: nowrap;
+  color: var(--white) !important;
+}
+
 .nav-link::after {
   content: '';
   position: absolute;
@@ -304,8 +312,13 @@ header.scrolled {
   color: var(--pink-hot);
 }
 
+/* Don't show underline for button links */
+.nav-link.btn::after {
+  display: none;
+}
+
 .nav-link:hover::after, 
-.nav-link.active::after {
+.nav-link.active:not(.btn)::after {
   width: 100%;
 }
 
