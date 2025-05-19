@@ -1014,7 +1014,7 @@ address i {
     right: 30px;
     width: 45px;
     height: 45px;
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     color: var(--white);
     border-radius: 50%;
     display: flex;
