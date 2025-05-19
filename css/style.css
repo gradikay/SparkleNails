@@ -215,10 +215,17 @@ p {
   z-index: -1;
 }
 
-.btn:hover {
+.btn:hover, .btn.touch-active {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
-  color: var(--white) !important; /* Ensure text remains white on hover */
+  color: var(--white) !important; /* Ensure text remains white on hover/touch */
+}
+
+/* Mobile touch feedback */
+.btn.touch-active {
+  transform: scale(0.98) translateY(-2px); /* Slight scale down for tactile feedback */
+  opacity: 0.9;
+  transition: all 0.1s ease; /* Make touch feedback faster than hover */
 }
 
 .btn:hover::before {
@@ -453,9 +460,37 @@ header.scrolled {
 
 .service-card:hover, 
 .service-card:active,
-.service-card:focus {
+.service-card:focus,
+.service-card.touch-active {
   transform: translateY(-10px);
   box-shadow: var(--shadow-lg);
+}
+
+/* Touch ripple effect for service cards */
+.touch-ripple {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  opacity: 0;
+  transform: scale(0);
+  animation: ripple 0.7s ease-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
 }
 
 /* Ensure touch devices get the same effect */
@@ -575,13 +610,15 @@ header.scrolled {
 
 .gallery-item:hover .gallery-overlay,
 .gallery-item:active .gallery-overlay,
-.gallery-item:focus .gallery-overlay {
+.gallery-item:focus .gallery-overlay,
+.gallery-item.touch-active .gallery-overlay {
   opacity: 1;
 }
 
 .gallery-item:hover img,
 .gallery-item:active img,
-.gallery-item:focus img {
+.gallery-item:focus img,
+.gallery-item.touch-active img {
   transform: scale(1.1);
 }
 

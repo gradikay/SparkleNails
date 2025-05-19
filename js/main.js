@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initAnimations();
     initContactForm();
     lazyLoadImages();
+    initMobileTouchEffects(); // Add mobile touch effects
     
     // Add sparkle cursor effect to the body
     document.body.classList.add('heart-cursor');
@@ -377,6 +378,89 @@ function addGlitter() {
     
     glitterElements.forEach(element => {
         element.classList.add('glitter');
+    });
+}
+
+/**
+ * Enhance touch interaction for mobile devices
+ * Makes buttons and cards feel more responsive on touch
+ */
+function initMobileTouchEffects() {
+    // Add touch feedback to buttons
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        // Add active state class on touch start
+        button.addEventListener('touchstart', function(e) {
+            this.classList.add('touch-active');
+        }, {passive: true});
+        
+        // Remove active state on touch end
+        button.addEventListener('touchend', function(e) {
+            this.classList.remove('touch-active');
+        }, {passive: true});
+        
+        // Remove active state if touch is moved away
+        button.addEventListener('touchmove', function(e) {
+            const touch = e.touches[0];
+            const rect = this.getBoundingClientRect();
+            
+            // Check if finger moved outside the button
+            if (touch.clientX < rect.left || touch.clientX > rect.right || 
+                touch.clientY < rect.top || touch.clientY > rect.bottom) {
+                this.classList.remove('touch-active');
+            }
+        }, {passive: true});
+    });
+    
+    // Add touch feedback to service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        // Add active state on touch start
+        card.addEventListener('touchstart', function(e) {
+            this.classList.add('touch-active');
+            
+            // Create ripple effect
+            const rect = this.getBoundingClientRect();
+            const x = e.touches[0].clientX - rect.left;
+            const y = e.touches[0].clientY - rect.top;
+            
+            const ripple = document.createElement('span');
+            ripple.className = 'touch-ripple';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            
+            this.appendChild(ripple);
+            
+            // Remove ripple after animation
+            setTimeout(() => {
+                ripple.remove();
+            }, 700);
+        }, {passive: true});
+        
+        // Remove active state on touch end
+        card.addEventListener('touchend', function(e) {
+            this.classList.remove('touch-active');
+        }, {passive: true});
+    });
+    
+    // Add touch feedback to gallery items
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach(item => {
+        // Add active state on touch start
+        item.addEventListener('touchstart', function(e) {
+            this.classList.add('touch-active');
+        }, {passive: true});
+        
+        // Remove active state on touch end
+        item.addEventListener('touchend', function(e) {
+            this.classList.remove('touch-active');
+            
+            // Add a slight delay before removing the active state
+            // This makes the touch feedback more noticeable
+            setTimeout(() => {
+                this.classList.remove('touch-active');
+            }, 200);
+        }, {passive: true});
     });
 }
 
