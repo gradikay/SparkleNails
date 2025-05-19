@@ -1,58 +1,68 @@
 /**
- * TechnoNails - Main JavaScript File
- * Controls interactive elements of the website
+ * Sparkle Nails - Main JavaScript File
+ * Handles all interactive elements for our super girly nail salon website
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functions
+    // Initialize all functionality
     initNavigation();
-    initScrollEffects();
     initGalleryFilter();
     initTestimonialSlider();
-    initFormValidation();
+    initAnimations();
+    initContactForm();
     
-    // Add animation classes on scroll
-    animateOnScroll();
+    // Add sparkle cursor effect to the body
+    document.body.classList.add('heart-cursor');
 });
 
 /**
- * Handle navigation menu functionality
+ * Handle navigation functionality
  */
 function initNavigation() {
-    // Header scroll effect
     const header = document.querySelector('header');
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navList = document.querySelector('.nav-list');
+    const navLinks = document.querySelectorAll('.nav-link');
     
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (navMenu.classList.contains('active') && 
-            !e.target.closest('.nav-menu') && 
-            !e.target.closest('.mobile-menu-toggle')) {
-            navMenu.classList.remove('active');
+    // Handle scroll effects for header
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
         }
+        
+        // Update active nav link based on scroll position
+        highlightActiveNavLink();
     });
     
-    // Toggle mobile menu
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+    // Mobile menu toggle
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', function() {
+            navList.classList.toggle('open');
         });
     }
     
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (navList.classList.contains('open') && 
+            !e.target.closest('.nav-list') && 
+            !e.target.closest('.mobile-toggle')) {
+            navList.classList.remove('open');
+        }
+    });
+    
     // Close mobile menu when clicking on a nav link
-    const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
+        link.addEventListener('click', function() {
+            navList.classList.remove('open');
         });
     });
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
+            // Skip empty hash links
             if (this.getAttribute('href') === '#') return;
             
             const targetId = this.getAttribute('href');
@@ -73,46 +83,33 @@ function initNavigation() {
 }
 
 /**
- * Handle various scroll effects
- */
-function initScrollEffects() {
-    const header = document.querySelector('header');
-    
-    window.addEventListener('scroll', () => {
-        // Header scroll effect
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-        
-        // Highlight active nav section
-        highlightActiveNavLink();
-    });
-}
-
-/**
  * Highlight the active navigation link based on scroll position
  */
 function highlightActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     
-    let current = '';
+    // Get current scroll position
+    const scrollPosition = window.scrollY + 100; // Offset for header height
+    
+    // Find the current section
+    let currentSectionId = '';
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
         
-        if (window.scrollY >= sectionTop - 100) {
-            current = section.getAttribute('id');
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSectionId = section.getAttribute('id');
         }
     });
     
+    // Update active class on navigation links
     navLinks.forEach(link => {
         link.classList.remove('active');
         
-        if (link.getAttribute('href') === `#${current}`) {
+        const href = link.getAttribute('href');
+        if (href === `#${currentSectionId}`) {
             link.classList.add('active');
         }
     });
@@ -122,22 +119,25 @@ function highlightActiveNavLink() {
  * Handle gallery filtering functionality
  */
 function initGalleryFilter() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    const filterButtons = document.querySelectorAll('.filter-button');
     const galleryItems = document.querySelectorAll('.gallery-item');
     
     if (filterButtons.length && galleryItems.length) {
+        // Set up click event for each filter button
         filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
+            button.addEventListener('click', function() {
                 // Remove active class from all buttons
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 
                 // Add active class to clicked button
-                button.classList.add('active');
+                this.classList.add('active');
                 
-                const filter = button.getAttribute('data-filter');
+                // Get filter value
+                const filterValue = this.getAttribute('data-filter');
                 
+                // Filter gallery items
                 galleryItems.forEach(item => {
-                    if (filter === 'all' || item.classList.contains(filter)) {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
                         item.style.display = 'block';
                     } else {
                         item.style.display = 'none';
@@ -153,9 +153,11 @@ function initGalleryFilter() {
  */
 function initTestimonialSlider() {
     const testimonials = document.querySelectorAll('.testimonial');
-    const dots = document.querySelectorAll('.slider-dot');
+    const dots = document.querySelectorAll('.dot');
     
     if (testimonials.length && dots.length) {
+        let currentIndex = 0;
+        
         // Show first testimonial by default
         showTestimonial(0);
         
@@ -163,160 +165,204 @@ function initTestimonialSlider() {
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 showTestimonial(index);
+                currentIndex = index;
             });
         });
         
         // Auto rotate testimonials
-        let currentIndex = 0;
-        
         setInterval(() => {
             currentIndex = (currentIndex + 1) % testimonials.length;
             showTestimonial(currentIndex);
         }, 5000);
-    }
-    
-    function showTestimonial(index) {
-        // Hide all testimonials
-        testimonials.forEach(testimonial => {
-            testimonial.style.display = 'none';
-        });
         
-        // Show selected testimonial
-        testimonials[index].style.display = 'block';
-        
-        // Update active dot
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[index].classList.add('active');
+        // Function to show a specific testimonial
+        function showTestimonial(index) {
+            // Hide all testimonials
+            testimonials.forEach(testimonial => {
+                testimonial.style.display = 'none';
+            });
+            
+            // Show selected testimonial
+            testimonials[index].style.display = 'block';
+            
+            // Update active dot
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
     }
 }
 
 /**
- * Handle form validation
+ * Initialize scroll animations
  */
-function initFormValidation() {
+function initAnimations() {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    
+    // Create intersection observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fadeInUp');
+                // Stop observing once the animation has been triggered
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when at least 10% of the element is visible
+    });
+    
+    // Start observing elements
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+}
+
+/**
+ * Handle contact form validation and submission
+ */
+function initContactForm() {
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('name');
-            const email = document.getElementById('email');
-            const message = document.getElementById('message');
+            // Get form fields
+            const nameField = document.getElementById('name');
+            const emailField = document.getElementById('email');
+            const messageField = document.getElementById('message');
+            
+            // Validate fields
             let isValid = true;
             
-            // Validate name
-            if (name.value.trim() === '') {
-                showError(name, 'Name is required');
+            if (!nameField.value.trim()) {
+                showError(nameField, 'Please enter your name');
                 isValid = false;
             } else {
-                clearError(name);
+                clearError(nameField);
             }
             
-            // Validate email
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (email.value.trim() === '') {
-                showError(email, 'Email is required');
+            if (!emailField.value.trim()) {
+                showError(emailField, 'Please enter your email');
                 isValid = false;
-            } else if (!emailRegex.test(email.value.trim())) {
-                showError(email, 'Please enter a valid email');
+            } else if (!isValidEmail(emailField.value.trim())) {
+                showError(emailField, 'Please enter a valid email address');
                 isValid = false;
             } else {
-                clearError(email);
+                clearError(emailField);
             }
             
-            // Validate message
-            if (message.value.trim() === '') {
-                showError(message, 'Message is required');
+            if (!messageField.value.trim()) {
+                showError(messageField, 'Please enter your message');
                 isValid = false;
             } else {
-                clearError(message);
+                clearError(messageField);
             }
             
+            // If form is valid, simulate form submission
             if (isValid) {
-                // Simulate form submission
                 const submitBtn = contactForm.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
+                const originalText = submitBtn.innerText;
                 
+                // Show loading state
                 submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
+                submitBtn.innerText = 'Sending...';
                 
+                // Simulate form submission (would be replaced with actual API call)
                 setTimeout(() => {
+                    // Reset form
                     contactForm.reset();
+                    
+                    // Reset button
                     submitBtn.disabled = false;
-                    submitBtn.textContent = originalText;
+                    submitBtn.innerText = originalText;
                     
                     // Show success message
-                    const successMsg = document.createElement('div');
-                    successMsg.className = 'form-success';
-                    successMsg.textContent = 'Thank you! Your message has been sent.';
-                    contactForm.appendChild(successMsg);
+                    const formWrapper = contactForm.parentElement;
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'form-success';
+                    successMessage.style.padding = '15px';
+                    successMessage.style.marginTop = '15px';
+                    successMessage.style.backgroundColor = '#d4edda';
+                    successMessage.style.color = '#155724';
+                    successMessage.style.borderRadius = '5px';
+                    successMessage.style.textAlign = 'center';
+                    successMessage.innerText = 'Thank you! Your message has been sent successfully.';
                     
+                    formWrapper.appendChild(successMessage);
+                    
+                    // Remove success message after 5 seconds
                     setTimeout(() => {
-                        successMsg.remove();
+                        successMessage.remove();
                     }, 5000);
                 }, 1500);
             }
         });
         
-        // Handle input events to clear errors when user types
-        const inputs = contactForm.querySelectorAll('input, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('input', () => {
-                clearError(input);
+        // Add input event listeners to clear errors when typing
+        contactForm.querySelectorAll('input, textarea').forEach(field => {
+            field.addEventListener('input', function() {
+                clearError(this);
             });
         });
     }
     
-    function showError(input, message) {
-        const formGroup = input.parentElement;
-        const errorElement = formGroup.querySelector('.form-error');
+    // Helper functions for form validation
+    function showError(field, message) {
+        // Get the parent form group
+        const formGroup = field.closest('.form-group');
         
-        if (errorElement) {
-            errorElement.textContent = message;
-        } else {
-            const error = document.createElement('div');
-            error.className = 'form-error';
-            error.textContent = message;
-            error.style.color = 'var(--secondary)';
-            error.style.fontSize = '0.85rem';
-            error.style.marginTop = '5px';
-            formGroup.appendChild(error);
+        // Remove existing error message if any
+        const existingError = formGroup.querySelector('.error-message');
+        if (existingError) {
+            existingError.remove();
         }
         
-        input.style.borderColor = 'var(--secondary)';
+        // Create and add error message
+        const errorMessage = document.createElement('div');
+        errorMessage.className = 'error-message';
+        errorMessage.style.color = '#ff4057';
+        errorMessage.style.fontSize = '0.8rem';
+        errorMessage.style.marginTop = '5px';
+        errorMessage.innerText = message;
+        
+        formGroup.appendChild(errorMessage);
+        
+        // Add error style to the input
+        field.style.borderColor = '#ff4057';
     }
     
-    function clearError(input) {
-        const formGroup = input.parentElement;
-        const errorElement = formGroup.querySelector('.form-error');
+    function clearError(field) {
+        // Get the parent form group
+        const formGroup = field.closest('.form-group');
         
-        if (errorElement) {
-            errorElement.remove();
+        // Remove error message if exists
+        const errorMessage = formGroup.querySelector('.error-message');
+        if (errorMessage) {
+            errorMessage.remove();
         }
         
-        input.style.borderColor = '';
+        // Reset input style
+        field.style.borderColor = '';
+    }
+    
+    function isValidEmail(email) {
+        // Basic email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
     }
 }
 
 /**
- * Animate elements when they come into view
+ * Add glitter effect to elements
  */
-function animateOnScroll() {
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+function addGlitter() {
+    const glitterElements = document.querySelectorAll('.add-glitter');
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-    
-    animatedElements.forEach(element => {
-        observer.observe(element);
+    glitterElements.forEach(element => {
+        element.classList.add('glitter');
     });
 }
+
+// Call glitter effect after a short delay to ensure page is loaded
+setTimeout(addGlitter, 500);

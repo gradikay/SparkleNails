@@ -3,22 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechnoNails | Futuristic Nail Art & Design</title>
-    <meta name="description" content="Experience cutting-edge nail art and design at TechnoNails. Where technology meets beauty with our futuristic nail services and innovative techniques.">
-    <meta name="keywords" content="nail salon, futuristic nails, techno nails, nail art, gel nails, digital nail design, holographic nails, chrome nails">
-    <meta name="author" content="TechnoNails">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="TechnoNails | Futuristic Nail Art & Design">
-    <meta property="og:description" content="Experience cutting-edge nail art and design at TechnoNails. Where technology meets beauty with our futuristic nail services and innovative techniques.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.technonails.com/">
-    <meta property="og:image" content="assets/images/techno-nails-hero.webp">
-    <link rel="canonical" href="https://www.technonails.com/">
+    <title>Sparkle Nails | Premium Nail Care & Design</title>
+    <meta name="description" content="Welcome to Sparkle Nails, your destination for premium nail care and stunning nail designs. Schedule your appointment today!">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,405 +18,246 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
-        <div class="container header-container">
+        <div class="container header-inner">
             <div class="logo">
-                <a href="index.html">Techno<span>Nails</span></a>
+                <a href="index.html">✨ Sparkle Nails ✨</a>
             </div>
             <nav>
-                <ul class="nav-menu">
-                    <li><a href="#hero" class="nav-link active">Home</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><a href="#" class="btn btn-primary">Book Now</a></li>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="booking.html" class="nav-link btn btn-primary">Book Now</a></li>
                 </ul>
+                <button class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
-            <button class="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <img src="assets/images/nail_art_of_marsh.webp" alt="Futuristic Nail Design" class="hero-image">
         <div class="container">
             <div class="hero-content">
-                <h1>The Future of <span class="accent-text">Nail Art</span> Is Here</h1>
-                <p>Experience cutting-edge designs and innovative techniques at Chicago's premier tech-inspired nail studio</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="btn btn-primary btn-lg">Explore Services</a>
-                    <a href="#contact" class="btn btn-secondary btn-lg">Book Session</a>
+                <h1 class="animate-on-scroll">Welcome to <span class="text-primary">Sparkle Nails</span></h1>
+                <p class="animate-on-scroll">Where beauty meets artistry for the perfect nail experience</p>
+                <div class="hero-buttons animate-on-scroll">
+                    <a href="booking.html" class="btn btn-primary">Book Your Appointment</a>
+                    <a href="#services" class="btn btn-outline">Explore Services</a>
                 </div>
+            </div>
+            <div class="hero-image animate-on-scroll">
+                <img src="assets/images/Peach_perfection_glossy_nails.webp" alt="Glamorous nail design">
             </div>
         </div>
     </section>
-    
-    <!-- About Section -->
-    <section id="about" class="about-section">
+
+    <!-- Featured Services Section -->
+    <section id="services" class="services">
         <div class="container">
             <div class="section-title">
-                <h2>About TechnoNails</h2>
-                <p>Where innovation meets beauty in the digital age</p>
+                <h2>Our Fabulous Services</h2>
+                <p>Treat yourself to our premium nail care services</p>
             </div>
             
-            <div class="about-grid">
-                <div class="about-image animate-on-scroll">
-                    <img src="assets/images/woman_in_a_luxurious.webp" alt="TechnoNails Studio Interior">
+            <div class="service-cards">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <img src="assets/images/three_pink_nail_polish.webp" alt="Glamour Manicure">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Glamour Manicure</h3>
+                        <p>Our signature manicure includes cuticle care, nail shaping, hand massage, and premium polish application.</p>
+                        <span class="service-price">From $35</span>
+                        <a href="services.html" class="btn btn-outline mt-2">Learn More</a>
+                    </div>
                 </div>
-                <div class="about-content animate-on-scroll">
-                    <h3>The Digital Revolution in Nail Art</h3>
-                    <p>At TechnoNails, we're redefining what's possible in nail artistry through cutting-edge technology and forward-thinking design. Our team of tech-savvy nail artists combines digital precision with creative vision to create stunning, futuristic nail designs.</p>
-                    <p>From holographic finishes and LED-embedded designs to augmented reality nail art that comes alive through your smartphone, we're constantly pushing the boundaries of nail innovation.</p>
-                    <a href="#services" class="btn btn-primary">Explore Our Services</a>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <img src="assets/images/feet_with_perfect_toe.webp" alt="Luxury Pedicure">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Luxury Pedicure</h3>
+                        <p>Pamper your feet with our luxurious pedicure treatment including exfoliation, callus removal, and massage.</p>
+                        <span class="service-price">From $45</span>
+                        <a href="services.html" class="btn btn-outline mt-2">Learn More</a>
+                    </div>
                 </div>
+                
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <img src="assets/images/nails_of_an_influencer.webp" alt="Gel Extensions">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Gel Extensions</h3>
+                        <p>Enhance your natural nails with our long-lasting gel extensions, perfect for those wanting added length and strength.</p>
+                        <span class="service-price">From $50</span>
+                        <a href="services.html" class="btn btn-outline mt-2">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="services.html" class="btn btn-primary">View All Services</a>
             </div>
         </div>
     </section>
-    
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Futuristic Services</h2>
-                <p>Experience the latest innovations in nail technology</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-meteor"></i>
-                    </div>
-                    <h3 class="service-title">Holographic Chrome</h3>
-                    <p>Ultra-reflective finish that shifts colors as it catches the light, creating a mesmerizing dimensional effect that looks straight out of a sci-fi film.</p>
-                    <span class="service-price">From $45</span>
-                </div>
-                
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-digital-tachograph"></i>
-                    </div>
-                    <h3 class="service-title">Digital Nail Mapping</h3>
-                    <p>Precision designs created through our digital mapping technology, allowing for intricate patterns and perfect symmetry across all nails.</p>
-                    <span class="service-price">From $55</span>
-                </div>
-                
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3 class="service-title">Reactive Gel</h3>
-                    <p>Temperature-sensitive gel polish that changes color based on your body heat or environment, creating an interactive nail experience.</p>
-                    <span class="service-price">From $50</span>
-                </div>
-                
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <h3 class="service-title">LED Embedded Tips</h3>
-                    <p>Dramatic nail extensions embedded with micro-LED technology that can be programmed to display patterns or react to music.</p>
-                    <span class="service-price">From $75</span>
-                </div>
-                
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-vr-cardboard"></i>
-                    </div>
-                    <h3 class="service-title">AR Nail Art</h3>
-                    <p>Static designs that transform into animations when viewed through our custom smartphone app, creating an augmented reality experience.</p>
-                    <span class="service-price">From $60</span>
-                </div>
-                
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-qrcode"></i>
-                    </div>
-                    <h3 class="service-title">Smart Nails</h3>
-                    <p>Embedded NFC technology that can be programmed to share your contact info, social media, or launch websites with a simple tap of your finger.</p>
-                    <span class="service-price">From $70</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery-section">
+    <section id="gallery-preview" class="gallery">
         <div class="container">
             <div class="section-title">
-                <h2>Our Digital Gallery</h2>
-                <p>Browse our collection of futuristic nail designs</p>
-            </div>
-            
-            <div class="gallery-filter">
-                <button class="filter-btn active" data-filter="all">All Designs</button>
-                <button class="filter-btn" data-filter="holographic">Holographic</button>
-                <button class="filter-btn" data-filter="led">LED</button>
-                <button class="filter-btn" data-filter="chrome">Chrome</button>
-                <button class="filter-btn" data-filter="reactive">Reactive</button>
+                <h2>Nail Art Inspiration</h2>
+                <p>Browse our collection of stunning nail designs</p>
             </div>
             
             <div class="gallery-grid">
-                <div class="gallery-item holographic animate-on-scroll">
-                    <img src="assets/images/three_pink_nail_polish.webp" alt="Holographic Pink Nails">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/images/nail_art_of_marsh.webp" alt="Pink Ombre Design">
                     <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h4>Prismatic Shift</h4>
-                            <p>Holographic chrome finish</p>
-                        </div>
+                        <h4 class="gallery-title">Pink Ombre Design</h4>
                     </div>
                 </div>
                 
-                <div class="gallery-item chrome animate-on-scroll">
-                    <img src="assets/images/three_white_nail_polish.webp" alt="Chrome Finish Nails">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/images/stars_beautifulnail.webp" alt="Star Accents">
                     <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h4>Mirror Effect</h4>
-                            <p>Ultra-reflective chrome powder</p>
-                        </div>
+                        <h4 class="gallery-title">Star Accents</h4>
                     </div>
                 </div>
                 
-                <div class="gallery-item led animate-on-scroll">
-                    <img src="assets/images/nail_art_of_marsh.webp" alt="LED Embedded Nail Design">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/images/three_white_nail_polish.webp" alt="Elegant White">
                     <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h4>Circuit Glow</h4>
-                            <p>Micro-LED embedded tips</p>
-                        </div>
+                        <h4 class="gallery-title">Elegant White</h4>
                     </div>
                 </div>
                 
-                <div class="gallery-item reactive animate-on-scroll">
-                    <img src="assets/images/nails_of_an_influencer.webp" alt="Reactive Gel Nails">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="assets/images/garden_picnicsunnysunday_morning.webp" alt="Summer Vibes">
                     <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h4>Heat Sensitive</h4>
-                            <p>Temperature reactive gel</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item holographic animate-on-scroll">
-                    <img src="assets/images/stars_beautifulnail.webp" alt="Star Pattern Holographic">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h4>Cosmic Dust</h4>
-                            <p>Holographic with star patterns</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item chrome animate-on-scroll">
-                    <img src="assets/images/Peach_perfection_glossy_nails.webp" alt="Peach Chrome Nails">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h4>Digital Peach</h4>
-                            <p>Metallic chrome with matte accents</p>
-                        </div>
+                        <h4 class="gallery-title">Summer Vibes</h4>
                     </div>
                 </div>
             </div>
+            
+            <div class="text-center mt-4">
+                <a href="gallery.html" class="btn btn-primary">View Full Gallery</a>
+            </div>
         </div>
     </section>
-    
+
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section">
+    <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>Client Feedback</h2>
-                <p>What our tech-savvy clients say about our services</p>
+                <h2>What Our Clients Say</h2>
+                <p>Read reviews from our happy customers</p>
             </div>
             
-            <div class="testimonials-slider">
+            <div class="testimonial-slider">
                 <div class="testimonial animate-on-scroll">
-                    <div class="testimonial-quote">
-                        The LED embedded tips I got at TechnoNails are absolutely mind-blowing! They light up to the beat when I'm at clubs and everyone asks where I got them done. Worth every penny for something so unique!
-                    </div>
-                    <div class="testimonial-author">- Alex K., Tech Influencer</div>
+                    <p class="testimonial-text">I've been coming to Sparkle Nails for over a year now and I'm always amazed by the creativity and skill of their nail artists. My nails always look absolutely gorgeous!</p>
+                    <p class="testimonial-author">- Jessica R.</p>
                 </div>
                 
                 <div class="testimonial" style="display: none;">
-                    <div class="testimonial-quote">
-                        I'm obsessed with my new smart nails. Being able to share my contact info with just a tap is such a conversation starter at networking events. TechnoNails is years ahead of any other salon I've been to.
-                    </div>
-                    <div class="testimonial-author">- Morgan T., UX Designer</div>
+                    <p class="testimonial-text">The atmosphere at Sparkle Nails is so relaxing and the staff makes you feel like royalty. I got their Luxury Pedicure and it was worth every penny. My feet have never looked or felt better!</p>
+                    <p class="testimonial-author">- Michael T.</p>
                 </div>
                 
                 <div class="testimonial" style="display: none;">
-                    <div class="testimonial-quote">
-                        The holographic chrome manicure I got changes color depending on the lighting, and it looks like something from a sci-fi movie. I've never received so many compliments on my nails before!
-                    </div>
-                    <div class="testimonial-author">- Jamie L., Software Developer</div>
+                    <p class="testimonial-text">I came in with a photo of a complex nail design I wanted for my wedding, and they recreated it perfectly! Everyone was asking about my nails. The entire team is professional, skilled, and so friendly.</p>
+                    <p class="testimonial-author">- Sophia L.</p>
                 </div>
                 
-                <div class="slider-dots">
-                    <div class="slider-dot active"></div>
-                    <div class="slider-dot"></div>
-                    <div class="slider-dot"></div>
+                <div class="testimonial-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+
+    <!-- CTA Section -->
+    <section id="cta" class="about">
         <div class="container">
-            <div class="section-title">
-                <h2>Connect With Us</h2>
-                <p>Schedule your appointment or get in touch with our tech specialists</p>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-info animate-on-scroll">
-                    <h3>TechnoNails Studio</h3>
-                    <p>Experience the future of nail design at our cutting-edge studio, where technology and beauty intersect to create stunning, innovative nail art.</p>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <p>432 Digital Avenue, Chicago, IL 60654</p>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <p>(312) 555-8976</p>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <p>hello@technonails.com</p>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <p>Monday - Friday: 10am - 8pm</p>
-                            <p>Saturday: 10am - 6pm</p>
-                            <p>Sunday: 11am - 5pm</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <h2>Ready for Beautiful Nails?</h2>
+                    <p>At Sparkle Nails, we believe that beautiful nails are a form of self-expression and self-care. Our team of skilled nail artists is dedicated to providing you with exceptional nail services in a relaxing, luxurious environment.</p>
+                    <p>From classic manicures to intricate nail art, we use only premium products to ensure your nails look and feel their best. Each service is tailored to your preferences, allowing for a truly personalized experience.</p>
+                    <a href="booking.html" class="btn btn-primary">Book Your Appointment</a>
                 </div>
-                
-                <div class="contact-form animate-on-scroll">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Your Name">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Your Email">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service" class="form-label">Service of Interest</label>
-                            <select id="service" class="form-control">
-                                <option value="" selected disabled>Select a Service</option>
-                                <option value="holographic">Holographic Chrome</option>
-                                <option value="digital">Digital Nail Mapping</option>
-                                <option value="reactive">Reactive Gel</option>
-                                <option value="led">LED Embedded Tips</option>
-                                <option value="ar">AR Nail Art</option>
-                                <option value="smart">Smart Nails</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea id="message" class="form-control" placeholder="Your Message" rows="5"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-                    </form>
+                <div class="about-image animate-on-scroll">
+                    <img src="assets/images/woman_in_a_luxurious.webp" alt="Sparkle Nails Salon Interior">
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-row">
                 <div class="footer-col">
-                    <div class="footer-logo">
-                        Techno<span>Nails</span>
-                    </div>
-                    <p class="footer-about">
-                        Pushing the boundaries of nail art with cutting-edge technology and innovative designs. Where beauty meets the digital future.
-                    </p>
+                    <div class="footer-logo">✨ Sparkle Nails ✨</div>
+                    <p class="footer-about">Your destination for premium nail care and stunning designs. Where beauty meets artistry!</p>
                     <div class="social-icons">
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-col">
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h4 class="footer-title">Services</h4>
+                    <h4 class="footer-title">Hours</h4>
                     <ul class="footer-links">
-                        <li><a href="#services">Holographic Chrome</a></li>
-                        <li><a href="#services">Digital Nail Mapping</a></li>
-                        <li><a href="#services">Reactive Gel</a></li>
-                        <li><a href="#services">LED Embedded Tips</a></li>
-                        <li><a href="#services">AR Nail Art</a></li>
-                        <li><a href="#services">Smart Nails</a></li>
+                        <li>Monday: 10am - 7pm</li>
+                        <li>Tuesday: 10am - 7pm</li>
+                        <li>Wednesday: 10am - 7pm</li>
+                        <li>Thursday: 10am - 8pm</li>
+                        <li>Friday: 10am - 8pm</li>
+                        <li>Saturday: 9am - 6pm</li>
+                        <li>Sunday: 11am - 5pm</li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h4 class="footer-title">Contact Us</h4>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 432 Digital Avenue, Chicago, IL</li>
-                        <li><i class="fas fa-phone-alt"></i> (312) 555-8976</li>
-                        <li><i class="fas fa-envelope"></i> hello@technonails.com</li>
-                        <li><i class="fas fa-clock"></i> Mon-Fri: 10am-8pm</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Sparkle Avenue, Suite 101</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@sparklenails.com</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 TechnoNails. All Rights Reserved. | Website by <a href="#">Digital Creatives</a></p>
+                <p>&copy; 2025 Sparkle Nails. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
         </div>
     </footer>
-    
-    <!-- Back to Top Button -->
-    <a href="#hero" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>

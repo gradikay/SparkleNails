@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sparkle Nails</title>
+    <meta name="description" content="Get in touch with Sparkle Nails for appointments, questions, or inquiries. We're here to help with all your nail care needs.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="index.html">✨ Sparkle Nails ✨</a>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+                    <li class="nav-item"><a href="booking.html" class="nav-link btn btn-primary">Book Now</a></li>
+                </ul>
+                <button class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="hero" style="padding-bottom: var(--spacing-md);">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-on-scroll">Contact <span class="text-primary">Us</span></h1>
+                <p class="animate-on-scroll">We'd love to hear from you! Get in touch with our friendly team</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="add-glitter">Get In Touch</h2>
+                <p>Have questions or want to schedule an appointment? Reach out to us!</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll">
+                    <h3>Contact Information</h3>
+                    <p>We're here to answer any questions about our services, booking process, or anything else you might want to know about Sparkle Nails.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>123 Sparkle Avenue, Suite 101<br>New York, NY 10001</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>(555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>hello@sparklenails.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 10am - 7pm<br>
+                            Saturday: 9am - 6pm<br>
+                            Sunday: 11am - 5pm</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-icons mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form animate-on-scroll">
+                    <h3>Send Us a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your Name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Your Email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Your Phone Number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <select id="subject" class="form-control">
+                                <option value="" selected disabled>Select a Subject</option>
+                                <option value="appointment">Appointment Inquiry</option>
+                                <option value="service">Service Question</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-control" placeholder="Your Message" rows="5"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="add-glitter">Find Us</h2>
+                <p>Located in the heart of the city for your convenience</p>
+            </div>
+            
+            <div style="width: 100%; height: 400px; background-color: var(--pink-light); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-lg);">
+                <!-- In a real scenario, replace this with an actual map embed -->
+                <div style="text-align: center;">
+                    <i class="fas fa-map-marker-alt" style="font-size: 4rem; color: var(--pink-hot); margin-bottom: var(--spacing-sm);"></i>
+                    <h3>Sparkle Nails Location</h3>
+                    <p>123 Sparkle Avenue, Suite 101, New York, NY 10001</p>
+                    <p><a href="https://maps.google.com" target="_blank" class="btn btn-outline mt-2">Open in Google Maps</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="services" style="background-color: var(--pink-light);">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="add-glitter">Frequently Asked Questions</h2>
+                <p>Common questions about our services</p>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-content" style="padding: var(--spacing-lg);">
+                            <h3 class="service-title">Do I need an appointment?</h3>
+                            <p>While we do accept walk-ins if time allows, we highly recommend booking an appointment to ensure you get your preferred date, time, and nail technician. You can book online or give us a call.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-content" style="padding: var(--spacing-lg);">
+                            <h3 class="service-title">How long do services take?</h3>
+                            <p>Service duration varies depending on the treatment. Basic manicures take about 30-45 minutes, while more complex services like gel extensions with nail art may take up to 2 hours. Please check our services page for more details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-content" style="padding: var(--spacing-lg);">
+                            <h3 class="service-title">What if I need to cancel?</h3>
+                            <p>We understand that plans change. We request at least 24 hours' notice for cancellations or rescheduling to avoid a cancellation fee. Please call us as soon as possible if you need to modify your appointment.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-content" style="padding: var(--spacing-lg);">
+                            <h3 class="service-title">Do you offer gift cards?</h3>
+                            <p>Yes! Gift cards are available for purchase in our salon or online. They make perfect gifts for birthdays, anniversaries, or any special occasion. Gift cards can be used for any service or product we offer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="booking.html" class="btn btn-primary">Book Your Appointment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="add-glitter">Stay Connected</h2>
+                <p>Subscribe to our newsletter for nail care tips and exclusive offers</p>
+            </div>
+            
+            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <p class="mb-4">Join our mailing list to receive the latest news, promotions, and nail care tips from our team. We promise not to spam you—just the occasional sparkle in your inbox!</p>
+                
+                <form class="animate-on-scroll" style="display: flex; gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; margin-bottom: var(--spacing-md);">
+                    <input type="email" class="form-control" placeholder="Your Email Address" style="flex: 1; min-width: 250px;">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                
+                <p class="text-light" style="font-size: 0.9rem;">By subscribing, you agree to receive marketing emails from Sparkle Nails. You can unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <div class="footer-logo">✨ Sparkle Nails ✨</div>
+                    <p class="footer-about">Your destination for premium nail care and stunning designs. Where beauty meets artistry!</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Hours</h4>
+                    <ul class="footer-links">
+                        <li>Monday: 10am - 7pm</li>
+                        <li>Tuesday: 10am - 7pm</li>
+                        <li>Wednesday: 10am - 7pm</li>
+                        <li>Thursday: 10am - 8pm</li>
+                        <li>Friday: 10am - 8pm</li>
+                        <li>Saturday: 9am - 6pm</li>
+                        <li>Sunday: 11am - 5pm</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Sparkle Avenue, Suite 101</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@sparklenails.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sparkle Nails. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
